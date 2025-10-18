@@ -76,14 +76,14 @@
             <!-- Layouts -->
             <li class="menu-item">
               <a href="{{route('users.index')}}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-layout"></i>
+                <i class="menu-icon tf-icons bx bx-user"></i>
                 <div class="text-truncate" data-i18n="Layouts">Users</div>
               </a>
             </li>
 
             <li class="menu-item">
               <a href="javascript:void(0);" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-layout"></i>
+                <i class="menu-icon tf-icons bx bx-package"></i>
                 <div class="text-truncate" data-i18n="Layouts">Packages</div>
               </a>
             </li>
@@ -104,14 +104,14 @@
 
             <li class="menu-item">
               <a href="javascript:void(0);" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-layout"></i>
+                <i class="menu-icon tf-icons bx bx-wallet-alt"></i>
                 <div class="text-truncate" data-i18n="Layouts">Payments</div>
               </a>
             </li>
 
             <li class="menu-item">
               <a href="javascript:void(0);" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-layout"></i>
+                <i class="menu-icon tf-icons bx bx-chart-bar-rows"></i>
                 <div class="text-truncate" data-i18n="Layouts">Reports</div>
               </a>
             </li>
