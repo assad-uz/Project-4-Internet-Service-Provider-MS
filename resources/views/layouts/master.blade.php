@@ -1,3 +1,7 @@
+<!-- 
+ 
+@extends('layouts.app') 
+-->
 @include('layouts.partials.header')
     <!-- Layout wrapper -->
     <div class="layout-wrapper layout-content-navbar">

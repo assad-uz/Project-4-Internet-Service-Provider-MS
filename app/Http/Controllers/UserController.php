@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -11,7 +12,10 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        $users = User::latest()->paginate(10); // সব পোস্ট রিড করা ও পেজিনেশন
+    
+    // 'users' ডেটাটি index ভিউতে পাঠানো হচ্ছে
+    return view('pages.admin.users.index', compact('users'));
     }
 
     /**
