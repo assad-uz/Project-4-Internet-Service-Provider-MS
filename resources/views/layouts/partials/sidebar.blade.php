@@ -76,7 +76,7 @@
             <!-- Layouts -->
             <li class="menu-item">
               <a href="{{route('users.index')}}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-user"></i>
+                <i class="menu-icon tf-icons bx bx-group"></i>
                 <div class="text-truncate" data-i18n="Layouts">Users</div>
               </a>
             </li>
