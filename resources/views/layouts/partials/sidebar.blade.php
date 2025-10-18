@@ -83,7 +83,7 @@
 
             <li class="menu-item">
               <a href="javascript:void(0);" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-package"></i>
+                <i class="menu-icon tf-icons bx bx-list-ul"></i>
                 <div class="text-truncate" data-i18n="Layouts">Packages</div>
               </a>
             </li>
@@ -111,7 +111,7 @@
 
             <li class="menu-item">
               <a href="javascript:void(0);" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-chart-bar-rows"></i>
+                <i class="menu-icon tf-icons bx bx-edit"></i>
                 <div class="text-truncate" data-i18n="Layouts">Reports</div>
               </a>
             </li>
