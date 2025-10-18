@@ -5,7 +5,7 @@
 <div class="container mt-5">
 <div class="card shadow-lg">
 <div class="card-header bg-warning text-dark">
-<h4 class="mb-0">ব্যবহারকারী এডিট করুন: {{ $user->name }}</h4>
+<h4 class="mb-0">Edit user: {{ $user->name }}</h4>
 </div>
 <div class="card-body">
 

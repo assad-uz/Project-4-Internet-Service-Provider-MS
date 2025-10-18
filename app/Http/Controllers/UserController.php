@@ -12,13 +12,13 @@ class UserController extends Controller
     public function index()
     {
         $users = User::latest()->paginate(10);
-        return view('users.index', compact('users'));
+        return view('pages.admin.users.index', compact('users'));
     }
 
     // 2. users.create: Show form for creating new user
     public function create()
     {
-        return view('users.create');
+        return view('pages.admin.users.create');
     }
 
     // 3. users.store: Save data from the creation form
@@ -57,7 +57,7 @@ class UserController extends Controller
     public function edit(User $user)
     {
         // Sending existing user data to the view using Route Model Binding
-        return view('users.edit', compact('user'));
+        return view('pages.admin.users.edit', compact('user'));
     }
 
     // 6. users.update: Update the user data
