@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('packages', function (Blueprint $table) {
             $table->id();
+            $table->string('package_code', 10)->unique();
+            $table->string('package_name', 100);
+            $table->string('speed', 50);
+            $table->decimal('price', 10, 2);
             $table->timestamps();
         });
     }

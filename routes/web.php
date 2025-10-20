@@ -13,3 +13,6 @@ Route::get('/dashboard', [AdminController::class, 'dashboard']);
 // Users
 Route::resource('users', UserController::class);
 
+// Packages
+Route::resource('packages', UserController::class);
+
