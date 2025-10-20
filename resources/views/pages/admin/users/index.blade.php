@@ -38,14 +38,14 @@
                 <td>{{ $user->phone ?? 'N/A' }}</td>
                 <td>{{ $user->created_at ? $user->created_at->format('d M Y, h:i A') : 'N/A' }}</td>
                 <td class="text-center">
-                    <a href="{{ route('users.edit', $user->id) }}" class="btn btn-warning btn-icon btn-sm"><i class="bx bx-edit"></i></a>
+                    <a href="{{ route('users.edit', $user->id) }}" class="btn btn-warning btn-icon btn-sm"><i class="bx bx-edit text-white"></i></a>
 
                     <form action="{{ route('users.destroy', $user->id) }}" method="POST"
                         class="d-inline-block"
                         onsubmit="return confirm('Are you sure you want to delete this user?');">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="btn btn-danger btn-icon btn-sm"><i class="bx bx-trash"></i></button>
+                        <button type="submit" class="btn btn-danger btn-icon btn-sm"><i class="bx bx-trash text-white"></i></button>
                     </form>
                 </td>
             </tr>
