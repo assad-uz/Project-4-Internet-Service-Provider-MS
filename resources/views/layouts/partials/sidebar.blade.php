@@ -120,18 +120,5 @@
               <span class="menu-header-text">Apps &amp; Pages</span>
             </li> -->
             <!-- Pages -->
-            
-            
-            <!-- Misc -->
-            <li class="menu-header small text-uppercase"><span class="menu-header-text">Misc</span></li>
-            <li class="menu-item">
-              <a
-                href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/documentation/"
-                target="_blank"
-                class="menu-link">
-                <i class="menu-icon tf-icons bx bx-file"></i>
-                <div class="text-truncate" data-i18n="Documentation">Documentation</div>
-              </a>
-            </li>
           </ul>
         </aside>
