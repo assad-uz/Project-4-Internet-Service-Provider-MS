@@ -42,14 +42,14 @@
 
     <li class="menu-item">
       <a href="javascript:void(0);" class="menu-link">
-        <i class="menu-icon tf-icons bx bx-layout"></i>
+        <i class="menu-icon tf-icons bx bx-tachometer"></i>
         <div class="text-truncate" data-i18n="Layouts">Speed</div>
       </a>
     </li>
 
     <li class="menu-item">
       <a href="javascript:void(0);" class="menu-link">
-        <i class="menu-icon tf-icons bx bx-layout"></i>
+        <i class="menu-icon tf-icons bx bx-link-alt"></i>
         <div class="text-truncate" data-i18n="Layouts">Connections</div>
       </a>
     </li>
@@ -85,6 +85,5 @@
         <div class="text-truncate" data-i18n="Layouts">Portal</div>
       </a>
     </li>
-    <!-- Pages -->
   </ul>
 </aside>

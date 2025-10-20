@@ -1,165 +1,109 @@
+{{-- resources/views/dashboard.blade.php --}}
 @extends('layouts.app')
 
-@section('title', 'Dashboard')
-
+@section('title', 'Admin Dashboard')
 @section('content')
-    <div class="container-xxl flex-grow-1 container-p-y">
-              <div class="row">
-                <div class="col-xxl-8 mb-6 order-0">
-                  <div class="card">
-                    <div class="d-flex align-items-start row">
-                      <div class="col-sm-7">
-                        <div class="card-body">
-                          <h5 class="card-title text-primary mb-3">Congratulations Assaduzzaman! 🎉</h5>
-                          <p class="mb-6">
-                            You have done 72% more sales today.<br />Check your new badge in your profile.
-                          </p>
-
-                          <a href="javascript:;" class="btn btn-sm btn-outline-primary">View Badges</a>
-                        </div>
-                      </div>
-                      <div class="col-sm-5 text-center text-sm-left">
-                        <div class="card-body pb-0 px-0 px-md-6">
-                          <img
-                            src="{{asset('admin-src/assets/img/illustrations/man-with-laptop.png')}}"
-                            height="175"
-                            alt="View Badge User" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+<div class="container py-4">
+    <div class="row g-3">
+        {{-- Card 1 --}}
+        <div class="col-12 col-sm-6 col-md-3">
+            <div class="card shadow-sm border-0">
+                <div class="card-body text-center">
+                    <h6 class="text-muted">Total Users</h6>
+                    <h3 class="fw-bold">120</h3>
                 </div>
-                <div class="col-xxl-4 col-lg-12 col-md-4 order-1">
-                  <div class="row">
-                    <div class="col-lg-6 col-md-12 col-6 mb-6">
-                      <div class="card h-100">
-                        <div class="card-body">
-                          <div class="card-title d-flex align-items-start justify-content-between mb-4">
-                            <div class="avatar flex-shrink-0">
-                              <img
-                                src="{{asset('admin-src/assets/img/icons/unicons/chart-success.png')}}"
-                                alt="chart success"
-                                class="rounded" />
-                            </div>
-                            <div class="dropdown">
-                              <button
-                                class="btn p-0"
-                                type="button"
-                                id="cardOpt3"
-                                data-bs-toggle="dropdown"
-                                aria-haspopup="true"
-                                aria-expanded="false">
-                                <i class="icon-base bx bx-dots-vertical-rounded text-body-secondary"></i>
-                              </button>
-                              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt3">
-                                <a class="dropdown-item" href="javascript:void(0);">View More</a>
-                                <a class="dropdown-item" href="javascript:void(0);">Delete</a>
-                              </div>
-                            </div>
-                          </div>
-                          <p class="mb-1">Profit</p>
-                          <h4 class="card-title mb-3">$12,628</h4>
-                          <small class="text-success fw-medium"><i class="icon-base bx bx-up-arrow-alt"></i> +72.80%</small>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-lg-6 col-md-12 col-6 mb-6">
-                      <div class="card h-100">
-                        <div class="card-body">
-                          <div class="card-title d-flex align-items-start justify-content-between mb-4">
-                            <div class="avatar flex-shrink-0">
-                              <img
-                                src="{{asset('admin-src/assets/img/icons/unicons/wallet-info.png')}}"
-                                alt="wallet info"
-                                class="rounded" />
-                            </div>
-                            <div class="dropdown">
-                              <button
-                                class="btn p-0"
-                                type="button"
-                                id="cardOpt6"
-                                data-bs-toggle="dropdown"
-                                aria-haspopup="true"
-                                aria-expanded="false">
-                                <i class="icon-base bx bx-dots-vertical-rounded text-body-secondary"></i>
-                              </button>
-                              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt6">
-                                <a class="dropdown-item" href="javascript:void(0);">View More</a>
-                                <a class="dropdown-item" href="javascript:void(0);">Delete</a>
-                              </div>
-                            </div>
-                          </div>
-                          <p class="mb-1">Sales</p>
-                          <h4 class="card-title mb-3">$4,679</h4>
-                          <small class="text-success fw-medium"><i class="icon-base bx bx-up-arrow-alt"></i> +28.42%</small>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-12 col-md-8 col-lg-12 col-xxl-4 order-3 order-md-2 profile-report">
-                  <div class="row">
-                    <div class="col-6 mb-6 payments">
-                      <div class="card h-100">
-                        <div class="card-body">
-                          <div class="card-title d-flex align-items-start justify-content-between mb-4">
-                            <div class="avatar flex-shrink-0">
-                              <img src="{{asset('admin-src/assets/img/icons/unicons/paypal.png')}}" alt="paypal" class="rounded" />
-                            </div>
-                            <div class="dropdown">
-                              <button
-                                class="btn p-0"
-                                type="button"
-                                id="cardOpt4"
-                                data-bs-toggle="dropdown"
-                                aria-haspopup="true"
-                                aria-expanded="false">
-                                <i class="icon-base bx bx-dots-vertical-rounded text-body-secondary"></i>
-                              </button>
-                              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt4">
-                                <a class="dropdown-item" href="javascript:void(0);">View More</a>
-                                <a class="dropdown-item" href="javascript:void(0);">Delete</a>
-                              </div>
-                            </div>
-                          </div>
-                          <p class="mb-1">Payments</p>
-                          <h4 class="card-title mb-3">$2,456</h4>
-                          <small class="text-danger fw-medium"><i class="icon-base bx bx-down-arrow-alt"></i> -14.82%</small>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-6 mb-6 transactions">
-                      <div class="card h-100">
-                        <div class="card-body">
-                          <div class="card-title d-flex align-items-start justify-content-between mb-4">
-                            <div class="avatar flex-shrink-0">
-                              <img src="{{asset('admin-src/assets/img/icons/unicons/cc-primary.png')}}" alt="Credit Card" class="rounded" />
-                            </div>
-                            <div class="dropdown">
-                              <button
-                                class="btn p-0"
-                                type="button"
-                                id="cardOpt1"
-                                data-bs-toggle="dropdown"
-                                aria-haspopup="true"
-                                aria-expanded="false">
-                                <i class="icon-base bx bx-dots-vertical-rounded text-body-secondary"></i>
-                              </button>
-                              <div class="dropdown-menu" aria-labelledby="cardOpt1">
-                                <a class="dropdown-item" href="javascript:void(0);">View More</a>
-                                <a class="dropdown-item" href="javascript:void(0);">Delete</a>
-                              </div>
-                            </div>
-                          </div>
-                          <p class="mb-1">Transactions</p>
-                          <h4 class="card-title mb-3">$14,857</h4>
-                          <small class="text-success fw-medium"><i class="icon-base bx bx-up-arrow-alt"></i> +28.14%</small>
-                        </div>
-                      </div>
-                    </div>
-                    
-                  </div>
-                </div>
-              </div>
             </div>
+        </div>
+
+        {{-- Card 2 --}}
+        <div class="col-12 col-sm-6 col-md-3">
+            <div class="card shadow-sm border-0">
+                <div class="card-body text-center">
+                    <h6 class="text-muted">Active Users</h6>
+                    <h3 class="fw-bold text-success">95</h3>
+                </div>
+            </div>
+        </div>
+
+        {{-- Card 3 --}}
+        <div class="col-12 col-sm-6 col-md-3">
+            <div class="card shadow-sm border-0">
+                <div class="card-body text-center">
+                    <h6 class="text-muted">Inactive Users</h6>
+                    <h3 class="fw-bold text-danger">25</h3>
+                </div>
+            </div>
+        </div>
+
+        {{-- Card 4 --}}
+        <div class="col-12 col-sm-6 col-md-3">
+            <div class="card shadow-sm border-0">
+                <div class="card-body text-center">
+                    <h6 class="text-muted">Pending Support Ticket</h6>
+                    <h3 class="fw-bold text-warning">8</h3>
+                </div>
+            </div>
+        </div>
+
+        {{-- Card 5 --}}
+        <div class="col-12 col-sm-6 col-md-3">
+            <div class="card shadow-sm border-0">
+                <div class="card-body text-center">
+                    <h6 class="text-muted">Total Users | Package 01</h6>
+                    <h3 class="fw-bold">35</h3>
+                </div>
+            </div>
+        </div>
+
+        {{-- Card 6 --}}
+        <div class="col-12 col-sm-6 col-md-3">
+            <div class="card shadow-sm border-0">
+                <div class="card-body text-center">
+                    <h6 class="text-muted">Total Users | Package 02</h6>
+                    <h3 class="fw-bold">28</h3>
+                </div>
+            </div>
+        </div>
+
+        {{-- Card 7 --}}
+        <div class="col-12 col-sm-6 col-md-3">
+            <div class="card shadow-sm border-0">
+                <div class="card-body text-center">
+                    <h6 class="text-muted">Total Users | Package 03</h6>
+                    <h3 class="fw-bold">22</h3>
+                </div>
+            </div>
+        </div>
+
+        {{-- Card 8 --}}
+        <div class="col-12 col-sm-6 col-md-3">
+            <div class="card shadow-sm border-0">
+                <div class="card-body text-center">
+                    <h6 class="text-muted">Total Users | Package 04</h6>
+                    <h3 class="fw-bold">15</h3>
+                </div>
+            </div>
+        </div>
+
+        {{-- Card 9 --}}
+        <div class="col-12 col-sm-6 col-md-3">
+            <div class="card shadow-sm border-0">
+                <div class="card-body text-center">
+                    <h6 class="text-muted">Total Pending Payments</h6>
+                    <h3 class="fw-bold text-danger">5</h3>
+                </div>
+            </div>
+        </div>
+
+        {{-- Card 10 --}}
+        <div class="col-12 col-sm-6 col-md-3">
+            <div class="card shadow-sm border-0">
+                <div class="card-body text-center">
+                    <h6 class="text-muted">Total Sales Amount</h6>
+                    <h3 class="fw-bold text-primary">$12,450</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection
