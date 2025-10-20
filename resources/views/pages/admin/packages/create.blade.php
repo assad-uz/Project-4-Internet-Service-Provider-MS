@@ -49,9 +49,9 @@
 
                 {{-- Speed --}}
                 <div class="mb-3">
-                    <label for="speed" class="form-label">Speed (Mbps/Gbps)</label>
+                    <label for="speed" class="form-label">Speed (Mbps)</label>
                     <input type="text" class="form-control" id="speed" name="speed"
-                        value="{{ old('speed') }}" required placeholder="e.g., 50 Mbps or 1 Gbps">
+                        value="{{ old('speed') }}" required placeholder="e.g., 50 Mbps ps">
                     @error('speed')
                     <div class="text-danger mt-1">{{ $message }}</div>
                     @enderror

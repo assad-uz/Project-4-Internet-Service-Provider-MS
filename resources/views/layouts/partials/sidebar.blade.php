@@ -34,7 +34,7 @@
     </li>
 
     <li class="menu-item">
-      <a href="javascript:void(0);" class="menu-link">
+      <a href="{{route('packages.index')}}" class="menu-link">
         <i class="menu-icon tf-icons bx bx-list-ul"></i>
         <div class="text-truncate" data-i18n="Layouts">Packages</div>
       </a>
