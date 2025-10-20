@@ -17,7 +17,7 @@
           <!-- Content wrapper -->
           <div class="content-wrapper">
             <!-- Content -->
-             <div class="container-xxl flex-grow-1 container-p-y">
+             <div class="flex-grow-1 container-p-y">
                 <div className="card-body">
                   <!-- Insert Your content here -->
                   @yield('content')                  
