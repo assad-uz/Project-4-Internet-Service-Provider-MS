@@ -3,7 +3,7 @@
             <a href="index.html" class="app-brand-link">
               <span class="app-brand-logo demo">
                 <span class="text-primary">
-                  <svg
+                  <!-- <svg
                     width="25"
                     viewBox="0 0 25 42"
                     version="1.1"
@@ -49,7 +49,8 @@
                         </g>
                       </g>
                     </g>
-                  </svg>
+                  </svg> -->
+                  
                 </span>
               </span>
               <span class="app-brand-text demo menu-text fw-bold ms-2">SwiftNet</span>
@@ -88,6 +89,13 @@
               </a>
             </li>
 
+            <li class="menu-item">
+              <a href="javascript:void(0);" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-layout"></i>
+                <div class="text-truncate" data-i18n="Layouts">Speed</div>
+              </a>
+            </li>
+            
             <li class="menu-item">
               <a href="javascript:void(0);" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-layout"></i>
