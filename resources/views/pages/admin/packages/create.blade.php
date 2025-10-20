@@ -59,7 +59,7 @@
 
                 {{-- Price --}}
                 <div class="mb-3">
-                    <label for="price" class="form-label">Price (BDT)</label>
+                    <label for="price" class="form-label">Price</label>
                     <input type="number" step="0.01" class="form-control" id="price" name="price"
                         value="{{ old('price') }}" required placeholder="e.g., 999.50">
                     @error('price')

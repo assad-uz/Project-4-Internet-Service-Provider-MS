@@ -33,8 +33,8 @@
                         <th class="text-center">#</th>
                         <th>Package Code</th>
                         <th>Package Name</th>
-                        <th>Speed</th>
-                        <th>Price (BDT)</th>
+                        <th>Speed (Mbps)</th>
+                        <th>Price</th>
                         <th class="text-center">Actions</th>
                     </tr>
                 </thead>

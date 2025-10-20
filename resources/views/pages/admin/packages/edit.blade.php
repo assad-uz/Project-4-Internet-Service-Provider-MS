@@ -52,9 +52,9 @@
 
                 {{-- Speed --}}
                 <div class="mb-3">
-                    <label for="speed" class="form-label">Speed (Mbps/Gbps)</label>
+                    <label for="speed" class="form-label">Speed (Mbps)</label>
                     <input type="text" class="form-control" id="speed" name="speed"
-                        value="{{ old('speed', $package->speed) }}" required placeholder="e.g., 50 Mbps or 1 Gbps">
+                        value="{{ old('speed', $package->speed) }}" required placeholder="e.g., 50 Mbps ps">
                     @error('speed')
                     <div class="text-danger mt-1">{{ $message }}</div>
                     @enderror
@@ -62,7 +62,7 @@
 
                 {{-- Price --}}
                 <div class="mb-3">
-                    <label for="price" class="form-label">Price (BDT)</label>
+                    <label for="price" class="form-label">Price</label>
                     <input type="number" step="0.01" class="form-control" id="price" name="price"
                         value="{{ old('price', $package->price) }}" required placeholder="e.g., 999.50">
                     @error('price')
