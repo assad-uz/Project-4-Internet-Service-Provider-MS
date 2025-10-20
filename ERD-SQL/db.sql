@@ -1,13 +1,15 @@
+-- Database Schema
+
 CREATE DATABASE isp_management;
 USE isp_management;
 
--- -- 1. Users (Admin login)
--- CREATE TABLE users (
---   id INT AUTO_INCREMENT PRIMARY KEY,
---   username VARCHAR(50) NOT NULL,
---   password VARCHAR(255) NOT NULL,
---   role ENUM('admin') DEFAULT 'admin'
--- );
+-- 1. Roles (Admin login)
+CREATE TABLE users (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  username VARCHAR(50) NOT NULL,
+  password VARCHAR(255) NOT NULL,
+  role ENUM('admin','staff','customer') DEFAULT 'admin'
+);
 
 -- 2. Users
 CREATE TABLE users (
@@ -24,10 +26,10 @@ CREATE TABLE users (
 -- 3. Packages
 CREATE TABLE packages (
   id INT AUTO_INCREMENT PRIMARY KEY,
-  package_name VARCHAR(100) NOT NULL,
+  package_code INT(10),
+  package_name VARCHAR(100),
   speed VARCHAR(50),
-  duration VARCHAR(50),
-  price DECIMAL(10,2) NOT NULL,
+  price DECIMAL(10,2),
   -- status ENUM('available','unavailable') DEFAULT 'available'
 );
 
