@@ -7,8 +7,8 @@
                     <script>
                       document.write(new Date().getFullYear());
                     </script>
-                    , made with ❤️ by
-                    <a href="https://themeselection.com" target="_blank" class="footer-link">ThemeSelection</a>
+                    , developed by
+                    <a href="https://linkedin.com/in/assad-uz/" target="_blank" class="footer-link">ASSADUZZAMAN SHAON</a>
                   </div>
                   <div class="d-none d-lg-inline-block">
                     <a
