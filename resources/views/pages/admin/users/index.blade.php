@@ -21,8 +21,8 @@
                 <th style="width: 5%">#</th>
                 <th style="width: 15%">Name</th>
                 <th style="width: 20%">Email</th>
-                <th style="width: 20%">Address</th>
-                <th style="width: 15%">Phone</th>
+                <th style="width: 18%">Address</th>
+                <th style="width: 17%">Phone</th>
                 <th style="width: 15%">Created At</th>
                 <th style="width: 10%">Actions</th>
             </tr>
