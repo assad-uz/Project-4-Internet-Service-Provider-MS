@@ -1,0 +1,25 @@
+/*
+ * এই ফাইলটিতে শুধুমাত্র dashboard.blade.php এর জন্য স্টাইল রাখা হয়েছে।
+ * কার্ডে হালকা এলিভেশন ইফেক্ট যোগ করা হয়েছে যা ড্যাশবোর্ডটিকে আরও আকর্ষণীয় করে তুলবে।
+*/
+
+.card {
+    /* ট্রানজিশন যোগ করা হলো যেন transform পরিবর্তনটি মসৃণ হয় */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    /* নিশ্চিত করা হলো যে কার্ডগুলি সামান্য উপরে উঠে যেন সুন্দর দেখায় */
+}
+
+.card:hover {
+    /* মাউস হোভার করলে কার্ডটিকে ৫ পিক্সেল উপরে ওঠানো হচ্ছে */
+    transform: translateY(-5px);
+    /* হোভারের সময় শ্যাডোটিকে আরও দৃশ্যমান করা হলো */
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+    /* বর্ডার-স্টার্ট ইফেক্ট বজায় রাখতে বর্ডার কালার পরিবর্তন করা হলো */
+    border-color: #f8f9fa !important;
+}
+
+/* যদি আপনি বর্ডার-স্টার্ট কালারগুলো পরিবর্তন করতে চান, তাহলে এই ক্লাসগুলো ব্যবহার করতে পারেন: */
+/*
+.border-start-primary-hover { border-left-color: #007bff !important; }
+.border-start-info-hover { border-left-color: #17a2b8 !important; }
+*/

@@ -43,7 +43,7 @@
   <link rel="stylesheet" href="{{asset('admin-src/assets/vendor/libs/apex-charts/apex-charts.css')}}" />
 
   <!-- Page CSS -->
-
+  @stack('styles')
   <!-- Helpers -->
   <script src="{{asset('admin-src/assets/vendor/js/helpers.js')}}"></script>
   <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->

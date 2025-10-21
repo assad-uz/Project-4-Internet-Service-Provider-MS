@@ -2,6 +2,11 @@
 @extends('layouts.app')
 
 @section('title', 'Admin Dashboard')
+
+@push('styles')
+    <link rel="stylesheet" href="{{ asset('css/admin/dashboard.css') }}">
+@endpush
+
 @section('content')
 <div class="container py-4">
     <div class="row g-3">
