@@ -13,11 +13,6 @@
         <li class="nav-item"><a class="nav-link" href="#packages">Packages</a></li>
         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
       </ul>
-
-      <div class="ms-lg-3 mt-2 mt-lg-0">
-        <a href="{{ route('login') }}" class="btn btn-outline-primary btn-sm me-2">Login</a>
-        <a href="{{ route('register') }}" class="btn btn-primary btn-sm text-white">Register</a>
-      </div>
     </div>
   </div>
 </nav>

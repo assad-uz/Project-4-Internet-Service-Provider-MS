@@ -60,6 +60,6 @@ class HomeController extends Controller
         ];
 
         // আপনি চাইলে ডেটাবেস থেকে নিতেও পারেন; এখন ডেমো ডেটা পাঠাচ্ছি
-        return view('home', compact('packages'));
+        return view('pages.portal.home', compact('packages'));
     }
 }

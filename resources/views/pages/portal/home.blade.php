@@ -1,69 +1,146 @@
-@include('layouts-portal.partials.header')
-@include('layouts-portal.partials.navbar')
+@extends('layouts-portal.base')
 
-<main class="container py-5">
+@section('title','Home - YourISP')
+@push('styles')
+    <link rel="stylesheet" href="{{ asset('css/portal/home.css') }}">
+    @endpush
 
-  <!-- Hero Section -->
-  <section class="text-center mb-5">
-    <h1 class="fw-bold text-primary">Welcome to YourISP</h1>
-    <p class="text-muted">Fast, Reliable, and Affordable Internet for Everyone</p>
-    <a href="#packages" class="btn btn-primary btn-lg mt-3">View Packages</a>
-  </section>
+@section('content')
+<section class="hero-section">
+  <div class="container">
+    <div class="row align-items-center gy-4">
+      <div class="col-lg-6">
+        <h1 class="display-5 fw-bold">Fast, Reliable Internet — Built for You</h1>
+        <p class="lead text-muted mb-4">Choose from Bronze to Platinum. Simple pricing, instant installation and 24/7 support.</p>
 
-  <!-- Packages Section -->
-  <section id="packages" class="row g-4">
-    <!-- Bronze -->
-    <div class="col-md-3">
-      <div class="card text-center shadow-sm border-0 h-100">
-        <div class="card-header bg-warning fw-bold">Bronze Pack</div>
-        <div class="card-body">
-          <h5>৳499 / month</h5>
-          <p>Speed: 10 Mbps<br>Unlimited Usage</p>
-          <a href="#" class="btn btn-outline-primary">Subscribe</a>
+        <div class="d-flex gap-3 flex-wrap">
+            <a href="#packages" class="btn btn-primary btn-lg">View Packages</a>
+            <a href="#contact" class="btn btn-outline-secondary btn-lg">Contact Sales</a>
+        </div>
+
+        <div class="mt-4 d-flex flex-wrap gap-3">
+          <div class="stat">
+            <h4 class="mb-0">99.9%</h4>
+            <small class="text-muted">Uptime</small>
+          </div>
+          <div class="stat">
+            <h4 class="mb-0">24/7</h4>
+            <small class="text-muted">Support</small>
+          </div>
+          <div class="stat">
+            <h4 class="mb-0">Free</h4>
+            <small class="text-muted">Router (on signup)</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="hero-card shadow-lg">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <div>
+              <small class="text-muted">Limited Offer</small>
+              <h5 class="mb-0">Get first month 50% off</h5>
+            </div>
+            <div class="badge bg-primary text-white">Save</div>
+          </div>
+
+          <img src="https://images.unsplash.com/photo-1545239351-1141bd82e8a6?w=1400&q=80&auto=format&fit=crop" alt="network" class="img-fluid rounded mb-3">
+
+          <p class="text-muted mb-0">Professional-grade network, quick setup and local support team ready to assist.</p>
         </div>
       </div>
     </div>
-    <!-- Silver -->
-    <div class="col-md-3">
-      <div class="card text-center shadow-sm border-0 h-100">
-        <div class="card-header bg-secondary text-white fw-bold">Silver Pack</div>
-        <div class="card-body">
-          <h5>৳899 / month</h5>
-          <p>Speed: 25 Mbps<br>Unlimited Usage</p>
-          <a href="#" class="btn btn-outline-primary">Subscribe</a>
-        </div>
-      </div>
-    </div>
-    <!-- Gold -->
-    <div class="col-md-3">
-      <div class="card text-center shadow-sm border-0 h-100">
-        <div class="card-header bg-warning text-dark fw-bold">Gold Pack</div>
-        <div class="card-body">
-          <h5>৳1499 / month</h5>
-          <p>Speed: 50 Mbps<br>Unlimited Usage</p>
-          <a href="#" class="btn btn-outline-primary">Subscribe</a>
-        </div>
-      </div>
-    </div>
-    <!-- Platinum -->
-    <div class="col-md-3">
-      <div class="card text-center shadow-sm border-0 h-100">
-        <div class="card-header bg-dark text-white fw-bold">Platinum Pack</div>
-        <div class="card-body">
-          <h5>৳2499 / month</h5>
-          <p>Speed: 100 Mbps<br>Unlimited Usage</p>
-          <a href="#" class="btn btn-outline-primary">Subscribe</a>
-        </div>
-      </div>
-    </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="text-center mt-5">
-    <h3>Need Help?</h3>
-    <p>Contact our support team 24/7 for assistance.</p>
-    <a href="#" class="btn btn-success">Contact Us</a>
-  </section>
-</main>
+<section id="packages" class="py-5 bg-white">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">Internet Packages</h2>
+      <p class="text-muted">Flexible plans for home & business. Cancel anytime.</p>
+    </div>
 
-@include('layouts-portal.partials.footer')
+    <div class="row g-4">
+      @php
+        $packages = [
+          ['name'=>'Bronze Pack','price'=>'499','speed'=>'10 Mbps','color'=>'muted','badge'=>'Popular'],
+          ['name'=>'Silver Pack','price'=>'799','speed'=>'25 Mbps','color'=>'primary','badge'=>'Best Value'],
+          ['name'=>'Gold Pack','price'=>'1299','speed'=>'50 Mbps','color'=>'warning','badge'=>'Recommended'],
+          ['name'=>'Platinum Pack','price'=>'2499','speed'=>'100 Mbps','color'=>'dark','badge'=>'Premium'],
+        ];
+      @endphp
+
+      @foreach($packages as $pkg)
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="package-card h-100 shadow-sm border-0">
+          <div class="package-header d-flex justify-content-between align-items-center">
+            <h5 class="mb-0">{{ $pkg['name'] }}</h5>
+            <span class="badge bg-{{ $pkg['color']=='muted' ? 'secondary' : $pkg['color'] }}">{{ $pkg['badge'] }}</span>
+          </div>
+
+          <div class="package-body p-4">
+            <div class="price d-flex align-items-baseline gap-2 mb-2">
+              <h3 class="mb-0">৳{{ $pkg['price'] }}</h3>
+              <small class="text-muted">/ month</small>
+            </div>
+
+            <p class="text-muted mb-3">{{ $pkg['speed'] }}</p>
+
+            <ul class="list-unstyled text-sm mb-4">
+              <li class="mb-2"><i class="bi bi-check2-circle text-success me-2"></i> Unlimited browsing (fair usage)</li>
+              <li class="mb-2"><i class="bi bi-check2-circle text-success me-2"></i> 24/7 support</li>
+              <li class="mb-2"><i class="bi bi-check2-circle text-success me-2"></i> Free router (on signup)</li>
+            </ul>
+
+            <a href="#" class="btn btn-outline-{{ $pkg['color']=='muted' ? 'secondary' : $pkg['color'] }} w-100">Choose Plan</a>
+          </div>
+        </div>
+      </div>
+      @endforeach
+    </div>
+  </div>
+</section>
+
+<section id="features" class="py-5">
+  <div class="container">
+    <div class="row g-4 align-items-center">
+      <div class="col-md-6">
+        <h3 class="fw-bold">Why choose YourISP?</h3>
+        <p class="text-muted">Local team, dedicated support and strong SLA for business customers.</p>
+
+        <div class="mt-4">
+          <div class="d-flex mb-3">
+            <div class="feature-icon me-3"><i class="bi bi-lightning-charge-fill"></i></div>
+            <div>
+              <h6 class="mb-0">Fast Connection</h6>
+              <small class="text-muted">Low latency & stable speeds</small>
+            </div>
+          </div>
+
+          <div class="d-flex mb-3">
+            <div class="feature-icon me-3"><i class="bi bi-shield-fill-check"></i></div>
+            <div>
+              <h6 class="mb-0">Secure & Reliable</h6>
+              <small class="text-muted">Network monitoring & SLA</small>
+            </div>
+          </div>
+
+          <div class="d-flex">
+            <div class="feature-icon me-3"><i class="bi bi-headset"></i></div>
+            <div>
+              <h6 class="mb-0">24/7 Support</h6>
+              <small class="text-muted">Ticket + phone support</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 text-center">
+        <img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231?w=1200&q=80&auto=format&fit=crop" alt="infrastructure" class="img-fluid rounded shadow-sm">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+@endsection
