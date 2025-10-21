@@ -29,7 +29,7 @@
 
 
     <!-- Child View files -->
-    @extends('layouts-portal.home')
+    @extends('layouts-portal.base')
 
     @section('title', 'Admin Dashboard')
     @push('styles')
