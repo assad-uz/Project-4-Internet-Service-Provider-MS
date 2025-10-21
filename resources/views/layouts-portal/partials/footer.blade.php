@@ -1,9 +1,11 @@
-<footer class="bg-light border-top mt-5 py-4 text-center">
-  <p class="mb-1 text-muted">&copy; {{ date('Y') }} YourISP. All rights reserved.</p>
-  <small>
-    <a href="{{ url('/privacy') }}" class="text-decoration-none text-muted me-3">Privacy</a>
-    <a href="{{ url('/terms') }}" class="text-decoration-none text-muted">Terms</a>
-  </small>
+<footer class="bg-white border-top mt-5">
+  <div class="container py-4 text-center">
+    <p class="mb-1 text-muted small">&copy; {{ date('Y') }} YourISP. All Rights Reserved.</p>
+    <small>
+      <a href="{{ url('/privacy') }}" class="text-decoration-none text-muted me-3">Privacy Policy</a>
+      <a href="{{ url('/terms') }}" class="text-decoration-none text-muted">Terms & Conditions</a>
+    </small>
+  </div>
 </footer>
 
 <!-- Bootstrap JS -->
