@@ -1,6 +1,3 @@
-<!-- 
-@extends('layouts.app') 
--->
 @include('layouts-portal.partials.header')
 <!-- Layout wrapper -->
 <div class="layout-wrapper layout-content-navbar">
@@ -31,8 +28,14 @@
             <!-- / Footer -->
 
 
-    <!-- New View files -->
-    @extends('layouts.app')
+    <!-- Child View files -->
+    @extends('layouts-portal.home')
 
     @section('title', 'Admin Dashboard')
-    
+    @push('styles')
+    <link rel="stylesheet" href="{{ asset('css/...') }}">
+    @endpush
+
+    @section('content')
+
+    @endsection
