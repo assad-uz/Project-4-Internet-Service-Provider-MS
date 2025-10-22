@@ -80,7 +80,7 @@
             </li>
 
     <li class="menu-item">
-      <a href="javascript:void(0);" class="menu-link">
+      <a href="{{ url('http://127.0.0.1:8000/') }}" class="menu-link">
         <i class="menu-icon tf-icons bx bx-globe"></i>
         <div class="text-truncate" data-i18n="Layouts">Portal</div>
       </a>

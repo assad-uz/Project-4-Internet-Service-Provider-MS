@@ -2,8 +2,8 @@
 
 @section('title','Home - SwiftNet')
 @push('styles')
-    <link rel="stylesheet" href="{{ asset('css/portal/home.css') }}">
-    @endpush
+<link rel="stylesheet" href="{{ asset('css/portal/home.css') }}">
+@endpush
 
 @section('content')
 <section class="hero-section">
@@ -14,8 +14,8 @@
         <p class="lead text-muted mb-4">Choose from Bronze to Platinum. Simple pricing, instant installation and 24/7 support.</p>
 
         <div class="d-flex gap-3 flex-wrap">
-            <a href="#packages" class="btn btn-primary btn-lg">View Packages</a>
-            <a href="#contact" class="btn btn-outline-secondary btn-lg">Contact Sales</a>
+          <a href="#packages" class="btn btn-primary btn-lg">View Packages</a>
+          <a href="#contact" class="btn btn-outline-secondary btn-lg">Contact Sales</a>
         </div>
 
         <div class="mt-4 d-flex flex-wrap gap-3">
@@ -44,7 +44,10 @@
             <div class="badge bg-primary text-white">Save</div>
           </div>
 
-          <img src="https://images.unsplash.com/photo-1545239351-1141bd82e8a6?w=1400&q=80&auto=format&fit=crop" alt="network" class="img-fluid rounded mb-3">
+          <img src="{{ asset('portal-src/assets/img/front/front1.jpg') }}"
+            alt="SwiftNet High-Speed Connection"
+            class="img-fluid card-img-top rounded-top rounded-bottom mb-3"
+            style="max-height: 300px; object-fit: cover;">
 
           <p class="text-muted mb-0">Professional-grade network, quick setup and local support team ready to assist.</p>
         </div>
@@ -62,12 +65,12 @@
 
     <div class="row g-4">
       @php
-        $packages = [
-          ['name'=>'Bronze Pack','price'=>'499','speed'=>'10 Mbps','color'=>'muted','badge'=>'Popular'],
-          ['name'=>'Silver Pack','price'=>'799','speed'=>'25 Mbps','color'=>'primary','badge'=>'Best Value'],
-          ['name'=>'Gold Pack','price'=>'1299','speed'=>'50 Mbps','color'=>'warning','badge'=>'Recommended'],
-          ['name'=>'Platinum Pack','price'=>'2499','speed'=>'100 Mbps','color'=>'dark','badge'=>'Premium'],
-        ];
+      $packages = [
+      ['name'=>'Bronze Pack','price'=>'499','speed'=>'10 Mbps','color'=>'muted','badge'=>'Popular'],
+      ['name'=>'Silver Pack','price'=>'799','speed'=>'25 Mbps','color'=>'primary','badge'=>'Best Value'],
+      ['name'=>'Gold Pack','price'=>'1299','speed'=>'50 Mbps','color'=>'warning','badge'=>'Recommended'],
+      ['name'=>'Platinum Pack','price'=>'2499','speed'=>'100 Mbps','color'=>'dark','badge'=>'Premium'],
+      ];
       @endphp
 
       @foreach($packages as $pkg)
@@ -136,7 +139,7 @@
       </div>
 
       <div class="col-md-6 text-center">
-        <img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231?w=1200&q=80&auto=format&fit=crop" alt="infrastructure" class="img-fluid rounded shadow-sm">
+        <img src="https://images.unsplash.com/photo-1577100078641-e92b0a906760?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=387" alt="infrastructure" class="img-fluid rounded shadow-sm">
       </div>
     </div>
   </div>
