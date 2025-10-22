@@ -18,7 +18,7 @@
 
   <ul class="menu-inner py-1">
     <!-- Dashboards -->
-    <li class="menu-item active open">
+    <li class="menu-item {{ request()->is('dashboard') ? 'active' : '' }}">
       <a href="/dashboard" class="menu-link">
         <i class="menu-icon tf-icons bx bx-home-smile"></i>
         <div class="text-truncate" data-i18n="Dashboards">Dashboards</div>
@@ -26,14 +26,14 @@
     </li>
 
     <!-- Layouts -->
-    <li class="menu-item">
+    <li class="menu-item {{ request()->is('users') ? 'active' : '' }}">
       <a href="{{route('users.index')}}" class="menu-link">
         <i class="menu-icon tf-icons bx bx-group"></i>
         <div class="text-truncate" data-i18n="Layouts">Users</div>
       </a>
     </li>
 
-    <li class="menu-item">
+    <li class="menu-item {{ request()->is('packages') ? 'active' : '' }}">
       <a href="{{route('packages.index')}}" class="menu-link">
         <i class="menu-icon tf-icons bx bx-list-ul"></i>
         <div class="text-truncate" data-i18n="Layouts">Packages</div>
@@ -68,8 +68,8 @@
       </a>
     </li>
 
-    <li class="menu-item">
-      <a href="javascript:void(0);" class="menu-link">
+    <li class="menu-item {{ request()->is('report') ? 'active' : '' }}">
+      <a href="/report" class="menu-link">
         <i class="menu-icon tf-icons bx bx-edit"></i>
         <div class="text-truncate" data-i18n="Layouts">Reports</div>
       </a>

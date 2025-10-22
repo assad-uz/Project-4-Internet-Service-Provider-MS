@@ -12,11 +12,15 @@ use App\Http\Controllers\PackageController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::get('/dashboard', [AdminController::class, 'dashboard']);
+Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
 
 // Users
 Route::resource('users', UserController::class);
 
 // Packages
 Route::resource('packages', PackageController::class);
+
+// Reports
+Route::view('/report', 'pages.admin.reports.report')->name('report');
+
 
