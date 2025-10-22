@@ -1,6 +1,6 @@
 @extends('layouts-portal.base')
 
-@section('title','Home - YourISP')
+@section('title','Home - SwiftNet')
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/portal/home.css') }}">
     @endpush
@@ -105,7 +105,7 @@
   <div class="container">
     <div class="row g-4 align-items-center">
       <div class="col-md-6">
-        <h3 class="fw-bold">Why choose YourISP?</h3>
+        <h3 class="fw-bold">Why choose SwiftNet?</h3>
         <p class="text-muted">Local team, dedicated support and strong SLA for business customers.</p>
 
         <div class="mt-4">

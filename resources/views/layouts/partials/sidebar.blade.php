@@ -1,6 +1,6 @@
 <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
   <div class="app-brand demo">
-    <a href="{{ url('/dashboard') }}" class="app-brand-link">
+    <a href="{{ url('/') }}" class="app-brand-link">
         <span class="app-brand-logo demo">
             <img src="admin-src/assets/img/logo/my_logo.png" alt="My Company Logo" class="w-auto h-auto" style="height: 25px;"/> 
         </span>
