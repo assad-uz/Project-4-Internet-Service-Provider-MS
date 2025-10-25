@@ -22,6 +22,21 @@ CREATE TABLE roles (
   role ENUM('admin','staff','customer')
 );
 
+-- 3. Staff
+CREATE TABLE staff (
+    id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    phone VARCHAR(20) NULL,    
+    designation VARCHAR(100) NULL, -- exmp: 'Technician', 'Accountant', 'Sales'
+    department VARCHAR(100) NULL,  -- exmp: 'Field Ops', 'Billing', 'Support'
+    is_active BOOLEAN DEFAULT TRUE, 
+    password VARCHAR(255) NULL, 
+    address TEXT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
 
 -- 3. Packages
 CREATE TABLE packages (
@@ -39,9 +54,7 @@ CREATE TABLE subscriptions (
   package_id INT,
   subs_start DATE,
   subs_end DATE,
-  subs_status ENUM('active', 'inactive') DEFAULT 'inactive',
-  bill_status ENUM('paid', 'unpaid') DEFAULT 'unpaid',
-  payment_id VARCHAR(255) NULL, 
+  subs_status ENUM('active', 'inactive', 'pending') DEFAULT 'pending',
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
@@ -66,24 +79,32 @@ CREATE TABLE connections (
     FOREIGN KEY (package_id) REFERENCES packages(id) ON DELETE RESTRICT
 );
 
--- 5. Bills
+-- 6. Bills
 CREATE TABLE bills (
   id INT AUTO_INCREMENT PRIMARY KEY,
-  connection_id INT,
-  bill_month VARCHAR(20),
-  amount DECIMAL(10,2),
-  due_date DATE,
-  status ENUM('paid','unpaid') DEFAULT 'unpaid',
-  FOREIGN KEY (connection_id) REFERENCES connections(id) ON DELETE CASCADE
+  subscription_id INT,
+  billing_cycle DATE NOT NULL,
+  package_price DECIMAL(10, 2) NOT NULL,
+  discount DECIMAL(10, 2) DEFAULT 0.00,
+  total_amount DECIMAL(10, 2) NOT NULL,
+  is_paid BOOLEAN DEFAULT FALSE,
+  -- status ENUM('paid','unpaid') DEFAULT 'unpaid',
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  FOREIGN KEY (subscription_id) REFERENCES subscriptions(id) ON DELETE CASCADE
 );
 
--- 6. Payments
+-- 7. Payments
 CREATE TABLE payments (
   id INT AUTO_INCREMENT PRIMARY KEY,
   bill_id INT,
-  payment_date DATE,
-  amount DECIMAL(10,2),
-  method VARCHAR(50),
-  note TEXT,
-  FOREIGN KEY (bill_id) REFERENCES bills(id) ON DELETE CASCADE
+  amount DECIMAL(10,2) NOT NULL,
+  payment_date DATETIME NOT NULL,
+  payment_method ENUM('cash', 'bank_transfer', 'mobile_money', 'card') NOT NULL,
+  transaction_id VARCHAR(255) NULL,
+  received_by INT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  FOREIGN KEY (bill_id) REFERENCES bills(id) ON DELETE CASCADE,
+  FOREIGN KEY (received_by) REFERENCES staff(id) ON DELETE SET NULL
 );
