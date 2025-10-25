@@ -12,15 +12,14 @@ CREATE TABLE users (
   email VARCHAR(100),
   role_id INT,
   password VARCHAR(255),
-  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (role_id) REFERENCES roles(id) ON DELETE SET NULL
 );
 
 -- 2. Roles
 CREATE TABLE roles (
   id INT AUTO_INCREMENT PRIMARY KEY,
-  username VARCHAR(50) NOT NULL,
-  password VARCHAR(255) NOT NULL,
-  role ENUM('admin','staff','customer') DEFAULT 'admin'
+  role ENUM('admin','staff','customer')
 );
 
 
@@ -31,7 +30,6 @@ CREATE TABLE packages (
   package_name VARCHAR(100),
   speed VARCHAR(50),
   price DECIMAL(10,2),
-  -- status ENUM('available','unavailable') DEFAULT 'available'
 );
 
 -- 4. Connections
