@@ -32,16 +32,38 @@ CREATE TABLE packages (
   price DECIMAL(10,2),
 );
 
--- 4. Connections
-CREATE TABLE connections (
+-- 4. Subscriptions
+CREATE TABLE subscriptions (
   id INT AUTO_INCREMENT PRIMARY KEY,
-  customer_id INT,
+  user_id INT, 
   package_id INT,
-  start_date DATE,
-  end_date DATE,
-  status ENUM('active','inactive','pending') DEFAULT 'pending',
-  FOREIGN KEY (customer_id) REFERENCES users(id) ON DELETE CASCADE,
-  FOREIGN KEY (package_id) REFERENCES packages(id) ON DELETE SET NULL
+  subs_start DATE,
+  subs_end DATE,
+  subs_status ENUM('active', 'inactive') DEFAULT 'inactive',
+  bill_status ENUM('paid', 'unpaid') DEFAULT 'unpaid',
+  payment_id VARCHAR(255) NULL, 
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+  FOREIGN KEY (package_id) REFERENCES packages(id) ON DELETE RESTRICT
+)
+
+-- 5. Connections
+CREATE TABLE connections (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    package_id INT NOT NULL,
+    connection_point VARCHAR(255) NOT NULL,
+    ip_address VARCHAR(45) NULL, 
+    mac_address VARCHAR(17) NULL,
+    installation_date DATE NOT NULL,
+    is_active BOOLEAN DEFAULT TRUE, 
+    termination_date DATE NULL,
+    notes TEXT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+    FOREIGN KEY (package_id) REFERENCES packages(id) ON DELETE RESTRICT
 );
 
 -- 5. Bills
