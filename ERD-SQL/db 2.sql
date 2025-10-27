@@ -88,20 +88,21 @@ CREATE TABLE subscriptions (
 
 -- 5. Connections
 CREATE TABLE connections (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    user_id INT NOT NULL,
-    package_id INT NOT NULL,
-    connection_point VARCHAR(255) NOT NULL,
-    ip_address VARCHAR(45) NULL, 
-    mac_address VARCHAR(17) NULL,
-    installation_date DATE NOT NULL,
-    is_active BOOLEAN DEFAULT TRUE, 
-    termination_date DATE NULL,
-    notes TEXT NULL,
+    id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    customer_id BIGINT UNSIGNED NOT NULL,       
+    package_id BIGINT UNSIGNED NOT NULL,       
+    distribution_box_id BIGINT UNSIGNED NOT NULL, 
+    ip_address VARCHAR(50) NULL,                
+    mac_address VARCHAR(20) NULL,             
+    box_port_number SMALLINT UNSIGNED NULL, 
+    connection_type ENUM('Optical Fiber', 'CAT5', 'UTP') NOT NULL, 
+    connection_date DATE NOT NULL,            
+    status ENUM('active', 'suspended', 'terminated') NOT NULL DEFAULT 'active',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
-    FOREIGN KEY (package_id) REFERENCES packages(id) ON DELETE RESTRICT
+    CONSTRAINT fk_conn_customer FOREIGN KEY (customer_id) REFERENCES customers(id),
+    CONSTRAINT fk_conn_package FOREIGN KEY (package_id) REFERENCES packages(id),
+    CONSTRAINT fk_conn_box FOREIGN KEY (distribution_box_id) REFERENCES distribution_boxes(id)
 );
 
 -- 6. Bills
