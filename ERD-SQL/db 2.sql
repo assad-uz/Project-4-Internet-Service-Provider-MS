@@ -114,11 +114,11 @@ CREATE TABLE billings (
     customer_id BIGINT UNSIGNED NOT NULL,       
     connection_id BIGINT UNSIGNED NOT NULL,     
     package_id BIGINT UNSIGNED NOT NULL,        
-    billing_month DATE NOT NULL,                
-    amount DECIMAL(10, 2) NOT NULL,             
+    billing_month DATE NOT NULL,               
+    amount DECIMAL(10, 2) NOT NULL,            
     due_date DATE NOT NULL,                    
     discount DECIMAL(10, 2) DEFAULT 0.00,      
-    status ENUM('paid', 'unpaid', 'cancelled') NOT NULL DEFAULT 'unpaid',
+    status ENUM('unpaid', 'paid', 'partially_paid', 'cancelled') NOT NULL DEFAULT 'unpaid',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     CONSTRAINT fk_billing_customer FOREIGN KEY (customer_id) REFERENCES customers(id),
@@ -127,28 +127,30 @@ CREATE TABLE billings (
     UNIQUE KEY uk_connection_month (connection_id, billing_month)
 );
 
-
-CREATE TABLE bills (
-  id INT AUTO_INCREMENT PRIMARY KEY,
-  subscription_id INT,
-  billing_cycle DATE NOT NULL,
-  package_price DECIMAL(10, 2) NOT NULL,
-  discount DECIMAL(10, 2) DEFAULT 0.00,
-  total_amount DECIMAL(10, 2) NOT NULL,
-  is_paid BOOLEAN DEFAULT FALSE,
-  -- status ENUM('paid','unpaid') DEFAULT 'unpaid',
-  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  FOREIGN KEY (subscription_id) REFERENCES subscriptions(id) ON DELETE CASCADE
+-- 7. Payments
+CREATE TABLE payments (
+    id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    billing_id BIGINT UNSIGNED NOT NULL,   
+    customer_id BIGINT UNSIGNED NOT NULL,    
+    collected_by BIGINT UNSIGNED NULL,        
+    payment_method ENUM('cash', 'bKash', 'card', 'bank') NOT NULL,
+    transaction_id VARCHAR(100) NULL,         
+    amount DECIMAL(10, 2) NOT NULL,          
+    payment_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP, 
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    CONSTRAINT fk_payment_billing FOREIGN KEY (billing_id) REFERENCES billings(id),
+    CONSTRAINT fk_payment_customer FOREIGN KEY (customer_id) REFERENCES customers(id),
+    CONSTRAINT fk_payment_collector FOREIGN KEY (collected_by) REFERENCES users(id)
 );
 
--- 7. Payments
+
+
 CREATE TABLE payments (
   id INT AUTO_INCREMENT PRIMARY KEY,
   bill_id INT,
   amount DECIMAL(10,2) NOT NULL,
   payment_date DATETIME NOT NULL,
-  payment_method ENUM('cash', 'bank_transfer', 'mobile_money', 'card') NOT NULL,
   transaction_id VARCHAR(255) NULL,
   received_by INT NULL,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
