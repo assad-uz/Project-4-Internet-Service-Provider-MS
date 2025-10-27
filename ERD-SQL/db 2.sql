@@ -172,20 +172,13 @@ CREATE TABLE subscriptions (
 
 --13. 
 CREATE TABLE notifications (
-    id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,               
-    
-    -- নোটিফিকেশন প্রাপক
-    notifiable_type VARCHAR(255) NOT NULL,    -- মডেলের নাম (যেমন: 'App\Models\User')
-    notifiable_id BIGINT UNSIGNED NOT NULL,   -- প্রাপকের ID (users টেবিলের ID)
-    
-    -- নোটিফিকেশন ডেটা
+    id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,                   
+    notifiable_type VARCHAR(255) NOT NULL,    
+    notifiable_id BIGINT UNSIGNED NOT NULL,  
     type VARCHAR(255) NOT NULL,          
     data JSON NOT NULL,                      
-    read_at TIMESTAMP NULL,                  
-    
+    read_at TIMESTAMP NULL,                      
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    
-    -- পলিমরফিক রিলেশনের জন্য ইনডেক্স
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,    
     INDEX idx_notifiable (notifiable_type, notifiable_id)
 );
