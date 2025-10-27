@@ -148,7 +148,7 @@ CREATE TABLE tickets (
     CONSTRAINT fk_ticket_assignee FOREIGN KEY (assigned_to) REFERENCES users(id)
 );
 
-
+-- Extra
 -- 11. Contact Messages
 CREATE TABLE contact_messages (
     id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -164,11 +164,30 @@ CREATE TABLE contact_messages (
 --12. subscriptions
 CREATE TABLE subscriptions (
     id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    
     email VARCHAR(100) NOT NULL UNIQUE,
-    
-    is_confirmed BOOLEAN NOT NULL DEFAULT FALSE, 
-    
+    is_confirmed BOOLEAN NOT NULL DEFAULT TRUE, 
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+--13. 
+CREATE TABLE notifications (
+    id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,               
+    
+    -- নোটিফিকেশন প্রাপক
+    notifiable_type VARCHAR(255) NOT NULL,    -- মডেলের নাম (যেমন: 'App\Models\User')
+    notifiable_id BIGINT UNSIGNED NOT NULL,   -- প্রাপকের ID (users টেবিলের ID)
+    
+    -- নোটিফিকেশন ডেটা
+    type VARCHAR(255) NOT NULL,               -- ইভেন্টের প্রকার (যেমন: 'NewCustomerRegistration', 'NewContactMessage')
+    data JSON NOT NULL,                       -- নোটিফিকেশনের সম্পূর্ণ ডেটা (JSON ফরম্যাটে)
+    
+    -- স্ট্যাটাস ট্র্যাকিং
+    read_at TIMESTAMP NULL,                   -- কখন পড়া হয়েছে
+    
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    
+    -- পলিমরফিক রিলেশনের জন্য ইনডেক্স
+    INDEX idx_notifiable (notifiable_type, notifiable_id)
 );
