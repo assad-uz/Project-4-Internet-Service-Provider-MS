@@ -1,5 +1,6 @@
 -- Database Schema
 
+-- Create database
 CREATE DATABASE isp_ms;
 USE isp_ms;
 
@@ -12,12 +13,28 @@ CREATE TABLE users (
     password VARCHAR(255) NOT NULL,
     role ENUM('admin', 'manager', 'technician') NOT NULL DEFAULT 'technician',
     avatar VARCHAR(255) NULL,
-    last_login_at TIMESTAMP NULL,    -- কমার ত্রুটি সংশোধন করা হয়েছে
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+    created_at TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    last_login_at TIMESTAMP NULL
 );
 
--- 2. Customers
+-- 2. Areas
+CREATE TABLE areas (
+    id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL UNIQUE,
+    created_at TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+-- 3. Customer types
+CREATE TABLE customer_types (
+    id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL UNIQUE,               -- Ex: Residential, Corporate, SME
+    created_at TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+-- 4. Customers
 CREATE TABLE customers (
     id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(150) NOT NULL,
@@ -27,37 +44,21 @@ CREATE TABLE customers (
     area_id BIGINT UNSIGNED NOT NULL,
     customer_type_id BIGINT UNSIGNED NOT NULL,
     status ENUM('active', 'inactive', 'suspended') NOT NULL DEFAULT 'inactive',
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    CONSTRAINT fk_customer_area FOREIGN KEY (area_id) REFERENCES areas(id),
-    CONSTRAINT fk_customer_type FOREIGN KEY (customer_type_id) REFERENCES customer_types(id)
+    created_at TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    CONSTRAINT fk_customer_area FOREIGN KEY (area_id) REFERENCES areas(id) ON DELETE RESTRICT ON UPDATE CASCADE,
+    CONSTRAINT fk_customer_type FOREIGN KEY (customer_type_id) REFERENCES customer_types(id) ON DELETE RESTRICT ON UPDATE CASCADE
 );
 
--- 3. Areas
-CREATE TABLE areas (
-    id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(100) NOT NULL UNIQUE,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-);
-
--- 4. Packages (গুরুত্বপূর্ণ সংশোধন)
+-- 5. Packages 
 CREATE TABLE packages (
     id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
-    package_code VARCHAR(10) NULL UNIQUE,       
+    package_code VARCHAR(50) UNIQUE,       
     package_name VARCHAR(100) NOT NULL,        
     speed INT UNSIGNED NOT NULL,               
-    price DECIMAL(10,2) NOT NULL UNSIGNED,        
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-);
-
--- 5. Customer types
-CREATE TABLE customer_types (
-    id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(50) NOT NULL UNIQUE,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+    price DECIMAL(10,2) UNSIGNED NOT NULL,        
+    created_at TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
 -- 6. Distribution boxes
@@ -66,30 +67,30 @@ CREATE TABLE distribution_boxes (
     box_code VARCHAR(50) NOT NULL UNIQUE,
     name VARCHAR(150) NULL,
     area_id BIGINT UNSIGNED NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    CONSTRAINT fk_box_area FOREIGN KEY (area_id) REFERENCES areas(id)
+    created_at TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    CONSTRAINT fk_box_area FOREIGN KEY (area_id) REFERENCES areas(id) ON DELETE RESTRICT ON UPDATE CASCADE
 );
 
--- 7. Connections (FK টাইপ সংশোধন)
+-- 7. Connections
 CREATE TABLE connections (
     id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     customer_id BIGINT UNSIGNED NOT NULL,
-    package_id BIGINT UNSIGNED NOT NULL, -- BIGINT UNSIGNED-এ নিশ্চিত করা হয়েছে
+    package_id BIGINT UNSIGNED NOT NULL,
     distribution_box_id BIGINT UNSIGNED NOT NULL,
     username VARCHAR(100) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL,
     ip_address VARCHAR(50) NULL,
     mac_address VARCHAR(20) NULL,
-    box_port_number SMALLINT UNSIGNED NULL,
-    connection_type ENUM('Optical Fiber', 'CAT5', 'UTP') NOT NULL,
+    box_port_number SMALLINT UNSIGNED NULL,                         -- Ex: 8/16/32/64
+    connection_type ENUM('Optical Fiber', 'CAT-5', 'UTP') NOT NULL,
     connection_date DATE NOT NULL,
     status ENUM('active', 'suspended', 'terminated') NOT NULL DEFAULT 'active',
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    CONSTRAINT fk_conn_customer FOREIGN KEY (customer_id) REFERENCES customers(id),
-    CONSTRAINT fk_conn_package FOREIGN KEY (package_id) REFERENCES packages(id),
-    CONSTRAINT fk_conn_box FOREIGN KEY (distribution_box_id) REFERENCES distribution_boxes(id)
+    created_at TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    CONSTRAINT fk_conn_customer FOREIGN KEY (customer_id) REFERENCES customers(id) ON DELETE RESTRICT ON UPDATE CASCADE,
+    CONSTRAINT fk_conn_package FOREIGN KEY (package_id) REFERENCES packages(id) ON DELETE RESTRICT ON UPDATE CASCADE,
+    CONSTRAINT fk_conn_box FOREIGN KEY (distribution_box_id) REFERENCES distribution_boxes(id) ON DELETE RESTRICT ON UPDATE CASCADE
 );
 
 -- 8. Billings
@@ -103,11 +104,11 @@ CREATE TABLE billings (
     due_date DATE NOT NULL,
     discount DECIMAL(10, 2) DEFAULT 0.00,
     status ENUM('unpaid', 'paid', 'partially_paid', 'cancelled') NOT NULL DEFAULT 'unpaid',
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    CONSTRAINT fk_billing_customer FOREIGN KEY (customer_id) REFERENCES customers(id),
-    CONSTRAINT fk_billing_connection FOREIGN KEY (connection_id) REFERENCES connections(id),
-    CONSTRAINT fk_billing_package FOREIGN KEY (package_id) REFERENCES packages(id),
+    created_at TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    CONSTRAINT fk_billing_customer FOREIGN KEY (customer_id) REFERENCES customers(id) ON DELETE RESTRICT ON UPDATE CASCADE,
+    CONSTRAINT fk_billing_connection FOREIGN KEY (connection_id) REFERENCES connections(id) ON DELETE RESTRICT ON UPDATE CASCADE,
+    CONSTRAINT fk_billing_package FOREIGN KEY (package_id) REFERENCES packages(id) ON DELETE RESTRICT ON UPDATE CASCADE,
     UNIQUE KEY uk_connection_month (connection_id, billing_month)
 );
 
@@ -120,12 +121,12 @@ CREATE TABLE payments (
     payment_method ENUM('cash', 'bKash', 'card', 'bank') NOT NULL,
     transaction_id VARCHAR(100) NULL,
     amount DECIMAL(10, 2) NOT NULL,
-    payment_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    CONSTRAINT fk_payment_billing FOREIGN KEY (billing_id) REFERENCES billings(id),
-    CONSTRAINT fk_payment_customer FOREIGN KEY (customer_id) REFERENCES customers(id),
-    CONSTRAINT fk_payment_collector FOREIGN KEY (collected_by) REFERENCES users(id)
+    payment_date TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+    created_at TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    CONSTRAINT fk_payment_billing FOREIGN KEY (billing_id) REFERENCES billings(id) ON DELETE RESTRICT ON UPDATE CASCADE,
+    CONSTRAINT fk_payment_customer FOREIGN KEY (customer_id) REFERENCES customers(id) ON DELETE RESTRICT ON UPDATE CASCADE,
+    CONSTRAINT fk_payment_collector FOREIGN KEY (collected_by) REFERENCES users(id) ON DELETE RESTRICT ON UPDATE CASCADE
 );
 
 -- 10. Tickets
@@ -140,33 +141,32 @@ CREATE TABLE tickets (
     status ENUM('open', 'in_progress', 'closed', 'cancelled') NOT NULL DEFAULT 'open',
     closed_at TIMESTAMP NULL,
     solution_notes TEXT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    CONSTRAINT fk_ticket_customer FOREIGN KEY (customer_id) REFERENCES customers(id),
-    CONSTRAINT fk_ticket_conn FOREIGN KEY (connection_id) REFERENCES connections(id),
-    CONSTRAINT fk_ticket_assignee FOREIGN KEY (assigned_to) REFERENCES users(id)
+    created_at TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    CONSTRAINT fk_ticket_customer FOREIGN KEY (customer_id) REFERENCES customers(id) ON DELETE RESTRICT ON UPDATE CASCADE,
+    CONSTRAINT fk_ticket_conn FOREIGN KEY (connection_id) REFERENCES connections(id) ON DELETE RESTRICT ON UPDATE CASCADE,
+    CONSTRAINT fk_ticket_assignee FOREIGN KEY (assigned_to) REFERENCES users(id) ON DELETE RESTRICT ON UPDATE CASCADE
 );
 
--- 11. Contact Messages (সংশোধন: Subject যোগ করা হয়েছে)
+-- 11. Contact Messages 
 CREATE TABLE contact_messages (
     id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(150) NOT NULL,
     email VARCHAR(100) NULL,
     phone VARCHAR(20) NULL,
-    subject VARCHAR(255) NULL, -- বিষয় যোগ করা হয়েছে
     message TEXT NOT NULL,
     is_read BOOLEAN NOT NULL DEFAULT FALSE,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+    created_at TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
--- 12. Subscriptions
-CREATE TABLE subscriptions (
+-- 12. Newsletter Subscriptions
+CREATE TABLE newsletter_subscriptions (
     id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     email VARCHAR(100) NOT NULL UNIQUE,
     is_confirmed BOOLEAN NOT NULL DEFAULT TRUE,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+    created_at TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
 -- 13. Notifications
@@ -177,7 +177,7 @@ CREATE TABLE notifications (
     type VARCHAR(255) NOT NULL,
     data JSON NOT NULL,
     read_at TIMESTAMP NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    created_at TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     INDEX idx_notifiable (notifiable_type, notifiable_id)
 );
