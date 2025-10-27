@@ -143,8 +143,32 @@ CREATE TABLE tickets (
     solution_notes TEXT NULL,                
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    
     CONSTRAINT fk_ticket_customer FOREIGN KEY (customer_id) REFERENCES customers(id),
     CONSTRAINT fk_ticket_conn FOREIGN KEY (connection_id) REFERENCES connections(id),
     CONSTRAINT fk_ticket_assignee FOREIGN KEY (assigned_to) REFERENCES users(id)
+);
+
+
+-- 11. Contact Messages
+CREATE TABLE contact_messages (
+    id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(150) NOT NULL,
+    email VARCHAR(100) NULL,
+    phone VARCHAR(20) NULL,
+    message TEXT NOT NULL,
+    is_read BOOLEAN NOT NULL DEFAULT FALSE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+--12. subscriptions
+CREATE TABLE subscriptions (
+    id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    
+    email VARCHAR(100) NOT NULL UNIQUE,
+    
+    is_confirmed BOOLEAN NOT NULL DEFAULT FALSE, 
+    
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
