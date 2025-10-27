@@ -72,7 +72,7 @@ CREATE TABLE distribution_boxes (
 );
 
 
--- 4. Subscriptions
+-- 7. Subscriptions
 CREATE TABLE subscriptions (
   id INT AUTO_INCREMENT PRIMARY KEY,
   user_id INT, 
@@ -86,7 +86,7 @@ CREATE TABLE subscriptions (
   FOREIGN KEY (package_id) REFERENCES packages(id) ON DELETE RESTRICT
 )
 
--- 5. Connections
+-- 8. Connections
 CREATE TABLE connections (
     id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     customer_id BIGINT UNSIGNED NOT NULL,       
@@ -107,8 +107,7 @@ CREATE TABLE connections (
     CONSTRAINT fk_conn_box FOREIGN KEY (distribution_box_id) REFERENCES distribution_boxes(id)
 );
 
--- 6. Bills
-
+-- 9. Bills
 CREATE TABLE billings (
     id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     customer_id BIGINT UNSIGNED NOT NULL,       
@@ -127,7 +126,7 @@ CREATE TABLE billings (
     UNIQUE KEY uk_connection_month (connection_id, billing_month)
 );
 
--- 7. Payments
+-- 10. Payments
 CREATE TABLE payments (
     id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     billing_id BIGINT UNSIGNED NOT NULL,   
@@ -144,17 +143,31 @@ CREATE TABLE payments (
     CONSTRAINT fk_payment_collector FOREIGN KEY (collected_by) REFERENCES users(id)
 );
 
-
-
-CREATE TABLE payments (
-  id INT AUTO_INCREMENT PRIMARY KEY,
-  bill_id INT,
-  amount DECIMAL(10,2) NOT NULL,
-  payment_date DATETIME NOT NULL,
-  transaction_id VARCHAR(255) NULL,
-  received_by INT NULL,
-  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  FOREIGN KEY (bill_id) REFERENCES bills(id) ON DELETE CASCADE,
-  FOREIGN KEY (received_by) REFERENCES staff(id) ON DELETE SET NULL
+-- 11. Tickets
+CREATE TABLE tickets (
+    id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    
+    -- সম্পর্ক স্থাপনকারী Foreign Keys
+    customer_id BIGINT UNSIGNED NOT NULL,       -- কোন গ্রাহক অভিযোগ করেছেন
+    connection_id BIGINT UNSIGNED NULL,         -- কোন সংযোগের সমস্যা (যদি প্রযোজ্য হয়)
+    assigned_to BIGINT UNSIGNED NULL,           -- কোন টেকনিশিয়ানকে অ্যাসাইন করা হয়েছে (users টেবিল থেকে)
+    
+    -- অভিযোগের বিবরণ
+    subject VARCHAR(255) NOT NULL,              -- অভিযোগের সংক্ষিপ্ত বিষয়
+    description TEXT NOT NULL,                  -- বিস্তারিত বিবরণ
+    priority ENUM('low', 'medium', 'high', 'critical') NOT NULL DEFAULT 'medium',
+    
+    -- স্ট্যাটাস ও সমাধান
+    status ENUM('open', 'in_progress', 'closed', 'cancelled') NOT NULL DEFAULT 'open',
+    closed_at TIMESTAMP NULL,                   -- কখন সমস্যা সমাধান হয়েছে
+    solution_notes TEXT NULL,                   -- সমাধানের বিস্তারিত নোট
+    
+    -- ট্র্যাকিং টাইমস্ট্যাম্প
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    
+    -- Foreign Key Constraints
+    CONSTRAINT fk_ticket_customer FOREIGN KEY (customer_id) REFERENCES customers(id),
+    CONSTRAINT fk_ticket_conn FOREIGN KEY (connection_id) REFERENCES connections(id),
+    CONSTRAINT fk_ticket_assignee FOREIGN KEY (assigned_to) REFERENCES users(id)
 );
