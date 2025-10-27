@@ -72,21 +72,7 @@ CREATE TABLE distribution_boxes (
 );
 
 
--- 7. Subscriptions
-CREATE TABLE subscriptions (
-  id INT AUTO_INCREMENT PRIMARY KEY,
-  user_id INT, 
-  package_id INT,
-  subs_start DATE,
-  subs_end DATE,
-  subs_status ENUM('active', 'inactive', 'pending') DEFAULT 'pending',
-  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
-  FOREIGN KEY (package_id) REFERENCES packages(id) ON DELETE RESTRICT
-)
-
--- 8. Connections
+-- 7. Connections
 CREATE TABLE connections (
     id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     customer_id BIGINT UNSIGNED NOT NULL,       
@@ -107,7 +93,7 @@ CREATE TABLE connections (
     CONSTRAINT fk_conn_box FOREIGN KEY (distribution_box_id) REFERENCES distribution_boxes(id)
 );
 
--- 9. Bills
+-- 8. Bills
 CREATE TABLE billings (
     id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     customer_id BIGINT UNSIGNED NOT NULL,       
@@ -126,7 +112,7 @@ CREATE TABLE billings (
     UNIQUE KEY uk_connection_month (connection_id, billing_month)
 );
 
--- 10. Payments
+-- 9. Payments
 CREATE TABLE payments (
     id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     billing_id BIGINT UNSIGNED NOT NULL,   
@@ -143,30 +129,21 @@ CREATE TABLE payments (
     CONSTRAINT fk_payment_collector FOREIGN KEY (collected_by) REFERENCES users(id)
 );
 
--- 11. Tickets
+-- 10. Tickets
 CREATE TABLE tickets (
     id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    
-    -- সম্পর্ক স্থাপনকারী Foreign Keys
-    customer_id BIGINT UNSIGNED NOT NULL,       -- কোন গ্রাহক অভিযোগ করেছেন
-    connection_id BIGINT UNSIGNED NULL,         -- কোন সংযোগের সমস্যা (যদি প্রযোজ্য হয়)
-    assigned_to BIGINT UNSIGNED NULL,           -- কোন টেকনিশিয়ানকে অ্যাসাইন করা হয়েছে (users টেবিল থেকে)
-    
-    -- অভিযোগের বিবরণ
-    subject VARCHAR(255) NOT NULL,              -- অভিযোগের সংক্ষিপ্ত বিষয়
-    description TEXT NOT NULL,                  -- বিস্তারিত বিবরণ
+    customer_id BIGINT UNSIGNED NOT NULL,       
+    connection_id BIGINT UNSIGNED NULL,        
+    assigned_to BIGINT UNSIGNED NULL,         
+    subject VARCHAR(255) NOT NULL,             
+    description TEXT NOT NULL,                
     priority ENUM('low', 'medium', 'high', 'critical') NOT NULL DEFAULT 'medium',
-    
-    -- স্ট্যাটাস ও সমাধান
     status ENUM('open', 'in_progress', 'closed', 'cancelled') NOT NULL DEFAULT 'open',
-    closed_at TIMESTAMP NULL,                   -- কখন সমস্যা সমাধান হয়েছে
-    solution_notes TEXT NULL,                   -- সমাধানের বিস্তারিত নোট
-    
-    -- ট্র্যাকিং টাইমস্ট্যাম্প
+    closed_at TIMESTAMP NULL,                   
+    solution_notes TEXT NULL,                
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     
-    -- Foreign Key Constraints
     CONSTRAINT fk_ticket_customer FOREIGN KEY (customer_id) REFERENCES customers(id),
     CONSTRAINT fk_ticket_conn FOREIGN KEY (connection_id) REFERENCES connections(id),
     CONSTRAINT fk_ticket_assignee FOREIGN KEY (assigned_to) REFERENCES users(id)
