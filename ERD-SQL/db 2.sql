@@ -179,11 +179,9 @@ CREATE TABLE notifications (
     notifiable_id BIGINT UNSIGNED NOT NULL,   -- প্রাপকের ID (users টেবিলের ID)
     
     -- নোটিফিকেশন ডেটা
-    type VARCHAR(255) NOT NULL,               -- ইভেন্টের প্রকার (যেমন: 'NewCustomerRegistration', 'NewContactMessage')
-    data JSON NOT NULL,                       -- নোটিফিকেশনের সম্পূর্ণ ডেটা (JSON ফরম্যাটে)
-    
-    -- স্ট্যাটাস ট্র্যাকিং
-    read_at TIMESTAMP NULL,                   -- কখন পড়া হয়েছে
+    type VARCHAR(255) NOT NULL,          
+    data JSON NOT NULL,                      
+    read_at TIMESTAMP NULL,                  
     
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
