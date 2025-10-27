@@ -92,6 +92,8 @@ CREATE TABLE connections (
     customer_id BIGINT UNSIGNED NOT NULL,       
     package_id BIGINT UNSIGNED NOT NULL,       
     distribution_box_id BIGINT UNSIGNED NOT NULL, 
+    username VARCHAR(100) NOT NULL UNIQUE,    
+    password VARCHAR(255) NOT NULL,
     ip_address VARCHAR(50) NULL,                
     mac_address VARCHAR(20) NULL,             
     box_port_number SMALLINT UNSIGNED NULL, 
@@ -106,6 +108,26 @@ CREATE TABLE connections (
 );
 
 -- 6. Bills
+
+CREATE TABLE billings (
+    id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    customer_id BIGINT UNSIGNED NOT NULL,       
+    connection_id BIGINT UNSIGNED NOT NULL,     
+    package_id BIGINT UNSIGNED NOT NULL,        
+    billing_month DATE NOT NULL,                
+    amount DECIMAL(10, 2) NOT NULL,             
+    due_date DATE NOT NULL,                    
+    discount DECIMAL(10, 2) DEFAULT 0.00,      
+    status ENUM('paid', 'unpaid', 'cancelled') NOT NULL DEFAULT 'unpaid',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    CONSTRAINT fk_billing_customer FOREIGN KEY (customer_id) REFERENCES customers(id),
+    CONSTRAINT fk_billing_connection FOREIGN KEY (connection_id) REFERENCES connections(id),
+    CONSTRAINT fk_billing_package FOREIGN KEY (package_id) REFERENCES packages(id),
+    UNIQUE KEY uk_connection_month (connection_id, billing_month)
+);
+
+
 CREATE TABLE bills (
   id INT AUTO_INCREMENT PRIMARY KEY,
   subscription_id INT,
