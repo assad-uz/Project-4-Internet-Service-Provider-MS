@@ -40,16 +40,25 @@
       </a>
     </li>
 
+    <li class="menu-header small text-uppercase"><span class="menu-header-text">Location</span></li>
     <li class="menu-item">
       <a href="javascript:void(0);" class="menu-link">
-        <i class="menu-icon tf-icons bx bx-tachometer"></i>
-        <div class="text-truncate" data-i18n="Layouts">Speed</div>
+        <i class="menu-icon tf-icons bx bx-link-alt"></i>
+        <div class="text-truncate" data-i18n="Layouts">Areas</div>
       </a>
     </li>
 
     <li class="menu-item">
       <a href="javascript:void(0);" class="menu-link">
         <i class="menu-icon tf-icons bx bx-link-alt"></i>
+        <div class="text-truncate" data-i18n="Layouts">Dist. Box</div>
+      </a>
+    </li>
+
+    <li class="menu-header small text-uppercase"><span class="menu-header-text">Connection &amp; Billings</span></li>
+    <li class="menu-item">
+      <a href="javascript:void(0);" class="menu-link">
+        <i class="menu-icon tf-icons bx bx-tachometer"></i>
         <div class="text-truncate" data-i18n="Layouts">Connections</div>
       </a>
     </li>
@@ -57,7 +66,7 @@
     <li class="menu-item">
       <a href="javascript:void(0);" class="menu-link">
         <i class="menu-icon tf-icons bx bx-layout"></i>
-        <div class="text-truncate" data-i18n="Layouts">Bills</div>
+        <div class="text-truncate" data-i18n="Layouts">Billings</div>
       </a>
     </li>
 
