@@ -33,6 +33,13 @@
       </a>
     </li>
 
+    <li class="menu-item {{ request()->is('') ? 'active' : '' }}">
+      <a href="javascript:void(0);" class="menu-link">
+        <i class="menu-icon tf-icons bx bx-list-ul"></i>
+        <div class="text-truncate" data-i18n="Layouts">Customer Types</div>
+      </a>
+    </li>
+    
     <li class="menu-item {{ request()->is('packages') ? 'active' : '' }}">
       <a href="{{route('packages.index')}}" class="menu-link">
         <i class="menu-icon tf-icons bx bx-list-ul"></i>
@@ -51,7 +58,7 @@
     <li class="menu-item">
       <a href="javascript:void(0);" class="menu-link">
         <i class="menu-icon tf-icons bx bx-link-alt"></i>
-        <div class="text-truncate" data-i18n="Layouts">Dist. Box</div>
+        <div class="text-truncate" data-i18n="Layouts">Distribution Box</div>
       </a>
     </li>
 
@@ -77,6 +84,29 @@
       </a>
     </li>
 
+    <li class="menu-header small text-uppercase"><span class="menu-header-text">Services</span></li>
+    <li class="menu-item {{ request()->is('') ? 'active' : '' }}">
+      <a href="javascript:void(0);" class="menu-link">
+        <i class="menu-icon tf-icons bx bx-edit"></i>
+        <div class="text-truncate" data-i18n="Layouts">Tickets</div>
+      </a>
+    </li>
+
+    <li class="menu-item {{ request()->is('') ? 'active' : '' }}">
+      <a href="javascript:void(0);" class="menu-link">
+        <i class="menu-icon tf-icons bx bx-edit"></i>
+        <div class="text-truncate" data-i18n="Layouts">Contact Messages</div>
+      </a>
+    </li>
+
+    <li class="menu-item {{ request()->is('') ? 'active' : '' }}">
+      <a href="javascript:void(0);" class="menu-link">
+        <i class="menu-icon tf-icons bx bx-edit"></i>
+        <div class="text-truncate" data-i18n="Layouts">Newsletter Subscriptions</div>
+      </a>
+    </li>
+
+    <li class="menu-header small text-uppercase"><span class="menu-header-text">Report</span></li>
     <li class="menu-item {{ request()->is('report') ? 'active' : '' }}">
       <a href="/report" class="menu-link">
         <i class="menu-icon tf-icons bx bx-edit"></i>
