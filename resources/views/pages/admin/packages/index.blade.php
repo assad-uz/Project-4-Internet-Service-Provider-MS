@@ -52,7 +52,7 @@
                                 <a href="{{ route('packages.edit', $package->id) }}"
                                     class="btn btn-warning btn-sm me-2"
                                     data-bs-toggle="tooltip" data-bs-placement="top" title="Edit Package">
-                                    <i class="bx bx-edit text-dark"></i>
+                                    <i class="bx bx-edit text-white"></i>
                                 </a>
 
                                 {{-- Delete Form (Icon) --}}

@@ -35,7 +35,7 @@
 
     <li class="menu-item {{ request()->is('') ? 'active' : '' }}">
       <a href="javascript:void(0);" class="menu-link">
-        <i class="menu-icon tf-icons bx bx-list-ul"></i>
+        <i class="menu-icon tf-icons bx bx-building-house"></i>
         <div class="text-truncate" data-i18n="Layouts">Customer Types</div>
       </a>
     </li>
@@ -50,14 +50,14 @@
     <li class="menu-header small text-uppercase"><span class="menu-header-text">Location</span></li>
     <li class="menu-item">
       <a href="javascript:void(0);" class="menu-link">
-        <i class="menu-icon tf-icons bx bx-link-alt"></i>
+        <i class="menu-icon tf-icons bx bx-bullseye"></i>
         <div class="text-truncate" data-i18n="Layouts">Areas</div>
       </a>
     </li>
 
     <li class="menu-item">
       <a href="javascript:void(0);" class="menu-link">
-        <i class="menu-icon tf-icons bx bx-link-alt"></i>
+        <i class="menu-icon tf-icons bx bx-box"></i>
         <div class="text-truncate" data-i18n="Layouts">Distribution Box</div>
       </a>
     </li>
@@ -87,21 +87,21 @@
     <li class="menu-header small text-uppercase"><span class="menu-header-text">Services</span></li>
     <li class="menu-item {{ request()->is('') ? 'active' : '' }}">
       <a href="javascript:void(0);" class="menu-link">
-        <i class="menu-icon tf-icons bx bx-edit"></i>
+        <i class="menu-icon tf-icons bx bx-help-circle"></i>
         <div class="text-truncate" data-i18n="Layouts">Tickets</div>
       </a>
     </li>
 
     <li class="menu-item {{ request()->is('') ? 'active' : '' }}">
       <a href="javascript:void(0);" class="menu-link">
-        <i class="menu-icon tf-icons bx bx-edit"></i>
+        <i class="menu-icon tf-icons bx bx-envelope-open"></i>
         <div class="text-truncate" data-i18n="Layouts">Contact Messages</div>
       </a>
     </li>
 
     <li class="menu-item {{ request()->is('') ? 'active' : '' }}">
       <a href="javascript:void(0);" class="menu-link">
-        <i class="menu-icon tf-icons bx bx-edit"></i>
+        <i class="menu-icon tf-icons bx bx-notification"></i>
         <div class="text-truncate" data-i18n="Layouts">Newsletter Subscriptions</div>
       </a>
     </li>
