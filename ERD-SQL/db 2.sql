@@ -130,7 +130,7 @@ CREATE TABLE payments (
 );
 
 -- 10. Tickets
-CREATE TABLE tickets (
+CREATE TABLE support_tickets (
     id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     customer_id BIGINT UNSIGNED NOT NULL,
     connection_id BIGINT UNSIGNED NULL,
@@ -143,9 +143,9 @@ CREATE TABLE tickets (
     solution_notes TEXT NULL,
     created_at TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    CONSTRAINT fk_ticket_customer FOREIGN KEY (customer_id) REFERENCES customers(id) ON DELETE RESTRICT ON UPDATE CASCADE,
-    CONSTRAINT fk_ticket_conn FOREIGN KEY (connection_id) REFERENCES connections(id) ON DELETE RESTRICT ON UPDATE CASCADE,
-    CONSTRAINT fk_ticket_assignee FOREIGN KEY (assigned_to) REFERENCES users(id) ON DELETE RESTRICT ON UPDATE CASCADE
+    CONSTRAINT fk_s_ticket_customer FOREIGN KEY (customer_id) REFERENCES customers(id) ON DELETE RESTRICT ON UPDATE CASCADE,
+    CONSTRAINT fk_s_ticket_conn FOREIGN KEY (connection_id) REFERENCES connections(id) ON DELETE RESTRICT ON UPDATE CASCADE,
+    CONSTRAINT fk_s_ticket_assignee FOREIGN KEY (assigned_to) REFERENCES users(id) ON DELETE RESTRICT ON UPDATE CASCADE
 );
 
 -- 11. Contact Messages 
