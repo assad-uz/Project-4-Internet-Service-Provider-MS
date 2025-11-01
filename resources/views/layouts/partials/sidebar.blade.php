@@ -33,12 +33,12 @@
       </a>
     </li>
 
-    <li class="menu-item {{ request()->is('') ? 'active' : '' }}">
-      <a href="javascript:void(0);" class="menu-link">
-        <i class="menu-icon tf-icons bx bx-building-house"></i>
-        <div class="text-truncate" data-i18n="Layouts">Customer Types</div>
-      </a>
-    </li>
+    <li class="menu-item {{ request()->is('customer_types*') ? 'active' : '' }}">
+  <a href="{{ route('customer_types.index') }}" class="menu-link">
+    <i class="menu-icon tf-icons bx bx-user-pin"></i> 
+    <div class="text-truncate" data-i18n="Customer Types">Customer Types</div>
+  </a>
+</li>
     
     <li class="menu-item {{ request()->is('packages') ? 'active' : '' }}">
       <a href="{{route('packages.index')}}" class="menu-link">

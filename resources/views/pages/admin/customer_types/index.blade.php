@@ -18,9 +18,9 @@
         <thead class="table-dark">
             <tr class="text-center">
                 <th style="width: 5%">#</th>
-                <th style="width: 70%">Name</th>
+                <th style="width: 65%">Name</th>
                 <th style="width: 15%">Created At</th>
-                <th style="width: 10%">Actions</th>
+                <th style="width: 15%">Actions</th>
             </tr>
         </thead>
         <tbody>

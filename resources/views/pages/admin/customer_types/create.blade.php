@@ -4,7 +4,7 @@
 @section('content')
 <div class="container mt-5">
 <div class="card shadow-lg">
-    <div class="card-header bg-secondary text-white">
+    <div class="card-header bg-success text-white">
         <h4 class="mb-0">Create New Customer Type</h4>
     </div>
     <div class="card-body">
