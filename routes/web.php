@@ -5,6 +5,7 @@ use App\Http\Controllers\AreaController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\BillingController;
 use App\Http\Controllers\PackageController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\ConnectionController;
@@ -40,7 +41,8 @@ Route::resource('customers', CustomerController::class);
 // Connections
 Route::resource('connections', ConnectionController::class);
 
-
+// Billings
+Route::resource('billings', BillingController::class);
 
 
 

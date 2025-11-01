@@ -76,10 +76,10 @@
     </li>
 
     <li class="menu-header small text-uppercase"><span class="menu-header-text">Billing &amp; Payments</span></li>
-    <li class="menu-item">
-      <a href="javascript:void(0);" class="menu-link">
-        <i class="menu-icon tf-icons bx bx-layout"></i>
-        <div class="text-truncate" data-i18n="Layouts">Billings</div>
+    <li class="menu-item {{ request()->is('billings*') ? 'active' : '' }}">
+      <a href="{{ route('billings.index') }}" class="menu-link">
+        <i class="menu-icon tf-icons bx bx-credit-card"></i> 
+        <div class="text-truncate" data-i18n="Billings">Billings</div>
       </a>
     </li>
 
