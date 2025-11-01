@@ -48,12 +48,11 @@
     </li>
 
     <li class="menu-header small text-uppercase"><span class="menu-header-text">Location</span></li>
-    <li class="menu-item">
-      <a href="javascript:void(0);" class="menu-link">
-        <i class="menu-icon tf-icons bx bx-bullseye"></i>
-        <div class="text-truncate" data-i18n="Layouts">Areas</div>
-      </a>
-    </li>
+    <li class="menu-item {{ request()->is('areas*') ? 'active' : '' }}">
+  <a href="{{ route('areas.index') }}" class="menu-link">
+    <i class="menu-icon tf-icons bx bx-bullseye"></i> <div class="text-truncate" data-i18n="Areas">Areas</div>
+  </a>
+</li>
 
     <li class="menu-item">
       <a href="javascript:void(0);" class="menu-link">

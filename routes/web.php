@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AreaController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
@@ -23,6 +24,14 @@ Route::resource('customer_types', CustomerTypeController::class);
 
 // Packages
 Route::resource('packages', PackageController::class);
+
+// Areas
+Route::resource('areas', AreaController::class);
+
+
+
+
+
 
 // Reports
 Route::view('/report', 'pages.admin.reports.report')->name('report');
