@@ -54,12 +54,11 @@
   </a>
 </li>
 
-    <li class="menu-item">
-      <a href="javascript:void(0);" class="menu-link">
-        <i class="menu-icon tf-icons bx bx-box"></i>
-        <div class="text-truncate" data-i18n="Layouts">Distribution Box</div>
-      </a>
-    </li>
+    <li class="menu-item {{ request()->is('distribution_boxes*') ? 'active' : '' }}">
+  <a href="{{ route('distribution_boxes.index') }}" class="menu-link">
+    <i class="menu-icon tf-icons bx bx-box"></i> <div class="text-truncate" data-i18n="Distribution Box">Distribution Box</div>
+  </a>
+</li>
 
     <li class="menu-header small text-uppercase"><span class="menu-header-text">Connection &amp; Billings</span></li>
     <li class="menu-item">

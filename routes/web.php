@@ -7,6 +7,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PackageController;
 use App\Http\Controllers\CustomerTypeController;
+use App\Http\Controllers\DistributionBoxController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -28,8 +29,8 @@ Route::resource('packages', PackageController::class);
 // Areas
 Route::resource('areas', AreaController::class);
 
-
-
+// Distribution Box
+Route::resource('distribution_boxes', DistributionBoxController::class);
 
 
 
