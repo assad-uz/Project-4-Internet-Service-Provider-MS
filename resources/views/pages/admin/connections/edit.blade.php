@@ -37,7 +37,7 @@
                         @foreach($packages as $package)
                             <option value="{{ $package->id }}" 
                                 {{ old('package_id', $connection->package_id) == $package->id ? 'selected' : '' }}>
-                                {{ $package->name }} 
+                                {{ $package->package_name }} 
                             </option>
                         @endforeach
                     </select>

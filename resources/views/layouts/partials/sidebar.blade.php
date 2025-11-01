@@ -60,6 +60,7 @@
   </a>
 </li>
 
+    <li class="menu-header small text-uppercase"><span class="menu-header-text">Connections</span></li>
     <li class="menu-item {{ request()->is('customers*') ? 'active' : '' }}">
       <a href="{{ route('customers.index') }}" class="menu-link">
         <i class="menu-icon tf-icons bx bx-user-plus"></i> 

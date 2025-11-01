@@ -36,7 +36,7 @@
                     <small class="text-muted">{{ $connection->customer->phone ?? '' }}</small>
                 </td>
                 <td>{{ $connection->username }}</td>
-                <td>{{ $connection->package->name ?? 'N/A' }}</td>
+                <td>{{ $connection->package->package_name ?? 'N/A' }}</td>
                 <td>
                     {{ $connection->distributionBox->box_code ?? 'N/A' }} / 
                     {{ $connection->box_port_number ?? 'N/A' }}

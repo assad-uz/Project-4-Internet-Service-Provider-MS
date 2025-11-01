@@ -61,7 +61,7 @@ class ConnectionController extends Controller
     public function edit(Connection $connection)
     {
         $customers = Customer::orderBy('name')->get(); 
-        $packages = Package::orderBy('name')->get(); 
+        $packages = Package::orderBy('package_name')->get(); 
         $boxes = DistributionBox::orderBy('box_code')->get(); 
         
         $connectionTypes = ['Optical Fiber', 'CAT-5', 'UTP'];
