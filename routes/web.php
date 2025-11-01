@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PackageController;
+use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\CustomerTypeController;
 use App\Http\Controllers\DistributionBoxController;
 
@@ -32,7 +33,8 @@ Route::resource('areas', AreaController::class);
 // Distribution Box
 Route::resource('distribution_boxes', DistributionBoxController::class);
 
-
+// Customers
+Route::resource('customers', CustomerController::class);
 
 // Reports
 Route::view('/report', 'pages.admin.reports.report')->name('report');

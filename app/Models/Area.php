@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Customer;
 use App\Models\DistributionBox;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -22,5 +23,10 @@ class Area extends Model
     {
         // 💡 একটি Area-তে একাধিক DistributionBox থাকতে পারে (hasMany)
         return $this->hasMany(DistributionBox::class);
+    }
+
+    public function customers(): HasMany
+    {
+        return $this->hasMany(Customer::class);
     }
 }
