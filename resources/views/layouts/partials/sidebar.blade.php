@@ -83,10 +83,10 @@
       </a>
     </li>
 
-    <li class="menu-item">
-      <a href="javascript:void(0);" class="menu-link">
-        <i class="menu-icon tf-icons bx bx-wallet-alt"></i>
-        <div class="text-truncate" data-i18n="Layouts">Payments</div>
+    <li class="menu-item {{ request()->is('payments*') ? 'active' : '' }}">
+      <a href="{{ route('payments.index') }}" class="menu-link">
+        <i class="menu-icon tf-icons bx bx-wallet"></i> 
+        <div class="text-truncate" data-i18n="Payments">Payments</div>
       </a>
     </li>
 

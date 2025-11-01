@@ -7,6 +7,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BillingController;
 use App\Http\Controllers\PackageController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\ConnectionController;
 use App\Http\Controllers\CustomerTypeController;
@@ -44,7 +45,8 @@ Route::resource('connections', ConnectionController::class);
 // Billings
 Route::resource('billings', BillingController::class);
 
-
+// Payments
+Route::resource('payments', PaymentController::class);
 
 // Reports
 Route::view('/report', 'pages.admin.reports.report')->name('report');

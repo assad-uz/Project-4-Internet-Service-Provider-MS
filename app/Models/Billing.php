@@ -2,9 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Billing extends Model
 {
@@ -43,5 +44,11 @@ class Billing extends Model
     public function package(): BelongsTo
     {
         return $this->belongsTo(Package::class);
+    }
+
+    public function payments(): HasMany // 💡 এই সম্পর্কটি যোগ করুন
+    {
+        // একটি বিলিং রেকর্ডের বিপরীতে একাধিক পেমেন্ট থাকতে পারে
+        return $this->hasMany(Payment::class, 'billing_id');
     }
 }
