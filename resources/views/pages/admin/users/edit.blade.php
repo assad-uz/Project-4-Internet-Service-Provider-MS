@@ -9,65 +9,71 @@
 </div>
 <div class="card-body">
 
-        {{-- Validation Errors --}}
-        @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
 
-        {{-- Form for updating user data --}}
-        {{-- Action points to users.update route with user ID, and method is PUT --}}
-        <form action="{{ route('users.update', $user->id) }}" method="POST">
-            @csrf
-            @method('PUT') 
+    <form action="{{ route('users.update', $user->id) }}" method="POST" enctype="multipart/form-data">
+        @csrf
+        @method('PUT') 
 
-            {{-- Name Field --}}
-            <div class="mb-3">
-                <label for="name" class="form-label">Name <span class="text-danger">*</span></label>
-                {{-- Prefilling old data from database or previous attempt --}}
-                <input type="text" class="form-control" id="name" name="name" value="{{ old('name', $user->name) }}" required>
-            </div>
+        <div class="mb-3">
+            <label for="name" class="form-label">Name <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="name" name="name" value="{{ old('name', $user->name) }}" required>
+        </div>
 
-            {{-- Email Field --}}
-            <div class="mb-3">
-                <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
-                <input type="email" class="form-control" id="email" name="email" value="{{ old('email', $user->email) }}" required>
-            </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
+            <input type="email" class="form-control" id="email" name="email" value="{{ old('email', $user->email) }}" required>
+        </div>
 
-            {{-- Password Field (Optional on Edit) --}}
-            <div class="mb-3">
-                <label for="password" class="form-label">Password</label>
-                <input type="password" class="form-control" id="password" name="password" placeholder="Leave blank to keep current password">
-                <small class="form-text text-muted">Leave blank to keep current password.</small>
-            </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Leave blank to keep current password">
+            <small class="form-text text-muted">Leave blank to keep current password.</small>
+        </div>
 
-            {{-- Address Field --}}
-            <div class="mb-3">
-                <label for="address" class="form-label">Address</label>
-                <textarea class="form-control" id="address" name="address">{{ old('address', $user->address) }}</textarea>
-            </div>
+        <div class="mb-3">
+            <label for="phone" class="form-label">Phone</label>
+            <input type="text" class="form-control" id="phone" name="phone" value="{{ old('phone', $user->phone) }}">
+        </div>
+
+        <div class="mb-3">
+            <label for="role" class="form-label">Role <span class="text-danger">*</span></label>
+            <select class="form-control" id="role" name="role" required>
+                <option value="technician" {{ old('role', $user->role) == 'technician' ? 'selected' : '' }}>Technician</option>
+                <option value="manager" {{ old('role', $user->role) == 'manager' ? 'selected' : '' }}>Manager</option>
+                <option value="admin" {{ old('role', $user->role) == 'admin' ? 'selected' : '' }}>Admin</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label d-block">Current Avatar</label>
+            @if ($user->avatar_url)
+                <img src="{{ $user->avatar_url }}" alt="Current Avatar" class="img-thumbnail mb-2" style="width: 100px; height: 100px; object-fit: cover;">
+            @else
+                <p class="text-muted">No avatar uploaded.</p>
+            @endif
             
-            {{-- Phone Field --}}
-            <div class="mb-3">
-                <label for="phone" class="form-label">Phone</label>
-                <input type="text" class="form-control" id="phone" name="phone" value="{{ old('phone', $user->phone) }}">
-            </div>
-            
-            <hr>
+            <label for="avatar" class="form-label">Upload New Avatar</label>
+            <input type="file" class="form-control" id="avatar" name="avatar" accept="image/*">
+            <small class="form-text text-muted">Upload a new image to replace the current one.</small>
+        </div>
+        
+        <hr>
 
-            <div class="d-flex justify-content-between">
-                <a href="{{ route('users.index') }}" class="btn btn-secondary">Back to List</a>
-                <button type="submit" class="btn btn-warning">Update</button>
-            </div>
-        </form>
-    </div>
+        <div class="d-flex justify-content-between">
+            <a href="{{ route('users.index') }}" class="btn btn-secondary">Back to List</a>
+            <button type="submit" class="btn btn-warning">Update</button>
+        </div>
+    </form>
 </div>
-
-
+</div>
 </div>
 @endsection

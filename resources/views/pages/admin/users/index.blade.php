@@ -20,11 +20,12 @@
         <thead class="table-dark">
             <tr class="text-center">
                 <th style="width: 5%">#</th>
+                <th style="width: 8%">Avatar</th> 
                 <th style="width: 15%">Name</th>
                 <th style="width: 20%">Email</th>
-                <th style="width: 18%">Address</th>
-                <th style="width: 17%">Phone</th>
-                <th style="width: 15%">Created At</th>
+                <th style="width: 10%">Phone</th>
+                <th style="width: 10%">Role</th> 
+                <th style="width: 14%">Last Login</th> 
                 <th style="width: 10%">Actions</th>
             </tr>
         </thead>
@@ -33,11 +34,34 @@
             @foreach($users as $index => $user)
             <tr>
                 <td class="text-center">{{ $loop->iteration + ($users->currentPage() - 1) * $users->perPage() }}</td>
+                
+                <td class="text-center">
+                    @if ($user->avatar_url)
+                        <img src="{{ $user->avatar_url }}" alt="{{ $user->name }} Avatar" class="img-thumbnail" style="width: 50px; height: 50px; object-fit: cover;">
+                    @else
+                        <span class="text-muted">N/A</span>
+                    @endif
+                </td>
+                
                 <td>{{ $user->name }}</td>
                 <td>{{ $user->email }}</td>
-                <td>{{ $user->address ?? 'N/A' }}</td>
+                
                 <td>{{ $user->phone ?? 'N/A' }}</td>
-                <td>{{ $user->created_at ? $user->created_at->format('d M Y, h:i A') : 'N/A' }}</td>
+                
+                <td><span class="badge {{ 
+                    $user->role == 'admin' ? 'bg-danger' : 
+                    ($user->role == 'manager' ? 'bg-warning text-dark' : 'bg-info') 
+                }}">{{ ucfirst($user->role) }}</span></td>
+
+                <td>
+                    @if ($user->last_login_at)
+                        {{ $user->last_login_at->diffForHumans() }} 
+                        <small class="text-muted d-block">{{ $user->last_login_at->format('d M Y') }}</small>
+                    @else
+                        <span class="text-muted">Never</span>
+                    @endif
+                </td>
+                
                 <td class="text-center">
                     <a href="{{ route('users.edit', $user->id) }}" class="btn btn-warning btn-icon btn-sm"><i class="bx bx-edit text-white"></i></a>
 
@@ -54,7 +78,7 @@
 
             @if($users->isEmpty())
             <tr>
-                <td colspan="7" class="text-center text-muted">No users found.</td>
+                <td colspan="8" class="text-center text-muted">No users found.</td>
             </tr>
             @endif
         </tbody>
