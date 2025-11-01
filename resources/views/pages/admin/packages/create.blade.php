@@ -1,84 +1,46 @@
 @extends('layouts.app')
 
 @section('title', 'Create Package')
-
 @section('content')
-
-<div class="container-xxl flex-grow-1 container-p-y">
-    <h4 class="fw-bold py-3 mb-4">
-        <span class="text-muted fw-light">Admin / Packages /</span> Create
-    </h4>
-
-    {{-- Validation Errors --}}
-    @if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-            <li>{{ $error }}</li>
-            @endforeach
-        </ul>
+<div class="container mt-5">
+<div class="card shadow-lg">
+    <div class="card-header bg-success text-white">
+        <h4 class="mb-0">Create New Package</h4>
     </div>
-    @endif
+    <div class="card-body">
+        @if ($errors->any())
+            <div class="alert alert-danger"><ul>@foreach ($errors->all() as $error) <li>{{ $error }}</li> @endforeach</ul></div>
+        @endif
 
-    {{-- Form Card --}}
-    <div class="card mb-4">
-        <h5 class="card-header">New Internet Package Information</h5>
-        <div class="card-body">
-            <form action="{{ route('packages.store') }}" method="POST">
-                @csrf
+        <form action="{{ route('packages.store') }}" method="POST">
+            @csrf
 
-                {{-- Package Code --}}
-                <div class="mb-3">
-                    <label for="package_code" class="form-label">Package Code</label>
-                    <input type="text" class="form-control" id="package_code" name="package_code"
-                        value="{{ old('package_code') }}" required placeholder="e.g., 101 or FIBER-100">
-                    @error('package_code')
-                    <div class="text-danger mt-1">{{ $message }}</div>
-                    @enderror
-                </div>
+            <div class="mb-3">
+                <label for="package_code" class="form-label">Package Code (Optional)</label>
+                <input type="text" class="form-control" id="package_code" name="package_code" value="{{ old('package_code') }}">
+            </div>
+            
+            <div class="mb-3">
+                <label for="package_name" class="form-label">Package Name <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="package_name" name="package_name" value="{{ old('package_name') }}" required>
+            </div>
 
-                {{-- Package Name --}}
-                <div class="mb-3">
-                    <label for="package_name" class="form-label">Package Name</label>
-                    <input type="text" class="form-control" id="package_name" name="package_name"
-                        value="{{ old('package_name') }}" required placeholder="e.g., Bronze Pack">
-                    @error('package_name')
-                    <div class="text-danger mt-1">{{ $message }}</div>
-                    @enderror
-                </div>
+            <div class="mb-3">
+                <label for="speed" class="form-label">Speed (in Mbps) <span class="text-danger">*</span></label>
+                <input type="number" class="form-control" id="speed" name="speed" value="{{ old('speed') }}" required>
+            </div>
+            
+            <div class="mb-3">
+                <label for="price" class="form-label">Price (BDT) <span class="text-danger">*</span></label>
+                <input type="number" step="0.01" class="form-control" id="price" name="price" value="{{ old('price') }}" required>
+            </div>
 
-                {{-- Speed --}}
-                <div class="mb-3">
-                    <label for="speed" class="form-label">Speed (Mbps)</label>
-                    <input type="text" class="form-control" id="speed" name="speed"
-                        value="{{ old('speed') }}" required placeholder="e.g., 50 Mbps ps">
-                    @error('speed')
-                    <div class="text-danger mt-1">{{ $message }}</div>
-                    @enderror
-                </div>
-
-                {{-- Price --}}
-                <div class="mb-3">
-                    <label for="price" class="form-label">Price</label>
-                    <input type="number" step="0.01" class="form-control" id="price" name="price"
-                        value="{{ old('price') }}" required placeholder="e.g., 999.50">
-                    @error('price')
-                    <div class="text-danger mt-1">{{ $message }}</div>
-                    @enderror
-                </div>
-
-                <div class="mt-4 pt-2">
-                    <button type="submit" class="btn btn-success me-2">
-                        <i class="bx bx-save me-1"></i> Save Package
-                    </button>
-                    <a href="{{ route('packages.index') }}" class="btn btn-secondary">
-                        <i class="bx bx-arrow-back me-1"></i> Back to List
-                    </a>
-                </div>
-            </form>
-        </div>
+            <div class="d-flex justify-content-between mt-4">
+                <a href="{{ route('packages.index') }}" class="btn btn-secondary">Back to list</a>
+                <button type="submit" class="btn btn-success">Save Package</button>
+            </div>
+        </form>
     </div>
-
-
+</div>
 </div>
 @endsection

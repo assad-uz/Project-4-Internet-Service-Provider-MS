@@ -67,10 +67,10 @@
       </a>
     </li>
 
-    <li class="menu-item">
-      <a href="javascript:void(0);" class="menu-link">
-        <i class="menu-icon tf-icons bx bx-tachometer"></i>
-        <div class="text-truncate" data-i18n="Layouts">Connections</div>
+    <li class="menu-item {{ request()->is('connections*') ? 'active' : '' }}">
+      <a href="{{ route('connections.index') }}" class="menu-link">
+        <i class="menu-icon tf-icons bx bx-globe"></i> 
+        <div class="text-truncate" data-i18n="Connections">Connections</div>
       </a>
     </li>
 

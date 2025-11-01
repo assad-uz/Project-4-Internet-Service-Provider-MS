@@ -1,89 +1,62 @@
 @extends('layouts.app')
 
-@section('title', 'Package List')
-
+@section('title', 'Packages List')
 @section('content')
-
-<div class="container-xxl flex-grow-1 container-p-y">
-    <h4 class="fw-bold py-3 mb-4">
-        <span class="text-muted fw-light">Admin /</span> Packages
-    </h4>
-
-    {{-- Success/Error Messages --}}
-    @if (session('success'))
-    <div class="alert alert-success alert-dismissible fade show" role="alert">
-        {{ session('success') }}
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
+<div class="container mt-4">
+    @if(session('success'))
+    <div class="alert alert-success">{{ session('success') }}</div>
+    @endif
+    @if(session('error'))
+    <div class="alert alert-danger">{{ session('error') }}</div>
     @endif
 
-    {{-- Package List Card --}}
-    <div class="card">
-        <div class="card-header d-flex justify-content-between align-items-center">
-            <h5 class="mb-0">Package List ({{ $packages->total() }} Total)</h5>
-            <a href="{{ route('packages.create') }}" class="btn btn-primary">
-                <i class="bx bx-plus me-1"></i> Create New Package
-            </a>
-        </div>
-
-        <div class="table-responsive text-nowrap">
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th class="text-center">#</th>
-                        <th>Package Code</th>
-                        <th>Package Name</th>
-                        <th style="text-transform: none">SPEED (Mbps)</th>
-                        <th>Price</th>
-                        <th class="text-center">Actions</th>
-                    </tr>
-                </thead>
-                <tbody class="table-border-bottom-0">
-                    @forelse ($packages as $package)
-                    <tr>
-                        <td class="text-center">{{ $loop->iteration }}</td>
-                        <td><i class="fab fa-bootstrap fa-lg text-primary me-3"></i> <strong>{{ $package->package_code }}</strong></td>
-                        <td>{{ $package->package_name }}</td>
-                        <td><span class="badge bg-label-info me-1">{{ $package->speed }}</span></td>
-                        <td>{{ number_format($package->price, 2) }}</td>
-                        <td class="text-center">
-                            <div class="d-flex justify-content-center">
-                                {{-- Edit Button (Icon) --}}
-                                <a href="{{ route('packages.edit', $package->id) }}"
-                                    class="btn btn-warning btn-sm me-2"
-                                    data-bs-toggle="tooltip" data-bs-placement="top" title="Edit Package">
-                                    <i class="bx bx-edit text-white"></i>
-                                </a>
-
-                                {{-- Delete Form (Icon) --}}
-                                <form action="{{ route('packages.destroy', $package->id) }}" method="POST"
-                                    onsubmit="return confirm('Are you sure you want to delete this package?');">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit"
-                                        class="btn btn-danger btn-sm"
-                                        data-bs-toggle="tooltip" data-bs-placement="top" title="Delete Package">
-                                        <i class="bx bx-trash text-white"></i>
-                                    </button>
-                                </form>
-                            </div>
-                        </td>
-                    </tr>
-                    @empty
-                    <tr>
-                        <td colspan="6" class="text-center">No packages found.</td>
-                    </tr>
-                    @endforelse
-                </tbody>
-            </table>
-        </div>
-
-        {{-- Pagination Links --}}
-        <div class="card-footer d-flex justify-content-center">
-            {{ $packages->links() }}
-        </div>
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h3 class="mb-0">Package Management</h3>
+        <a href="{{ route('packages.create') }}" class="btn btn-primary">
+            + Create New Package
+        </a>
     </div>
 
-
+    <table class="table table-bordered table-striped align-middle">
+        <thead class="table-dark">
+            <tr class="text-center">
+                <th style="width: 5%">#</th>
+                <th style="width: 20%">Code</th>
+                <th style="width: 30%">Package Name</th>
+                <th style="width: 15%">Speed (Mbps)</th>
+                <th style="width: 15%">Price (BDT)</th>
+                <th style="width: 15%">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($packages as $package)
+            <tr>
+                <td class="text-center">{{ $loop->iteration }}</td>
+                <td>{{ $package->package_code ?? 'N/A' }}</td>
+                <td>{{ $package->package_name }}</td>
+                <td class="text-center">{{ $package->speed }}</td>
+                <td class="text-right">৳ {{ number_format($package->price, 2) }}</td>
+                <td class="text-center">
+                    <a href="{{ route('packages.edit', $package->id) }}" class="btn btn-warning btn-sm">Edit</a>
+                    <form action="{{ route('packages.destroy', $package->id) }}" method="POST"
+                        class="d-inline-block"
+                        onsubmit="return confirm('Are you sure you want to delete this package?');">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            @endforeach
+            @if($packages->isEmpty())
+            <tr>
+                <td colspan="6" class="text-center text-muted">No packages found.</td>
+            </tr>
+            @endif
+        </tbody>
+    </table>
+    <div class="d-flex justify-content-center mt-3">
+        {{ $packages->links() }}
+    </div>
 </div>
 @endsection
