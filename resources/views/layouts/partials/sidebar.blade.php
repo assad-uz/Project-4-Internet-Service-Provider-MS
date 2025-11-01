@@ -2,7 +2,7 @@
   <div class="app-brand demo">
     <a href="{{ url('/') }}" class="app-brand-link">
         <span class="app-brand-logo demo">
-            <img src="admin-src/assets/img/logo/my_logo.png" alt="My Company Logo" class="w-auto h-auto" style="height: 25px;"/> 
+            <img src="{{ asset('admin-src/assets/img/logo/my_logo.png') }}" alt="My Company Logo" class="w-auto h-auto" style="height: 25px;"/> 
         </span>
         <span class="app-brand-text demo menu-text fw-bold ms-2">SwiftNet</span>
     </a>
