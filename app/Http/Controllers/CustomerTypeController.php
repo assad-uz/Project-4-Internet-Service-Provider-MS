@@ -7,59 +7,58 @@ use Illuminate\Http\Request;
 
 class CustomerTypeController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    // 1. INDEX: সমস্ত কাস্টমার টাইপ দেখানোর জন্য
     public function index()
     {
-        //
+        $customerTypes = CustomerType::orderBy('id', 'desc')->paginate(10); 
+        return view('pages.admin.customer_types.index', compact('customerTypes'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+    // 2. CREATE: নতুন ফর্ম দেখানোর জন্য
     public function create()
     {
-        //
+        return view('pages.admin.customer_types.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+    // 3. STORE: নতুন ডেটা সেভ করার জন্য
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'name' => 'required|string|max:50|unique:customer_types,name',
+        ]);
+        
+        CustomerType::create($validated);
+
+        return redirect()->route('customer_types.index')
+                         ->with('success', 'Customer Type created successfully.');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(CustomerType $customerType)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
+    // 4. EDIT: এডিট ফর্ম দেখানোর জন্য
     public function edit(CustomerType $customerType)
     {
-        //
+        return view('pages.admin.customer_types.edit', compact('customerType'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
+    // 5. UPDATE: ডেটা আপডেট করার জন্য
     public function update(Request $request, CustomerType $customerType)
     {
-        //
+        $validated = $request->validate([
+            // বর্তমান row-টিকে বাদ দিয়ে uniqueness চেক করা হচ্ছে
+            'name' => 'required|string|max:50|unique:customer_types,name,' . $customerType->id,
+        ]);
+
+        $customerType->update($validated);
+
+        return redirect()->route('customer_types.index')
+                         ->with('success', 'Customer Type updated successfully.');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
+    // 6. DESTROY: ডেটা ডিলিট করার জন্য
     public function destroy(CustomerType $customerType)
     {
-        //
+        $customerType->delete();
+        
+        return redirect()->route('customer_types.index')
+                         ->with('success', 'Customer Type deleted successfully.');
     }
 }
