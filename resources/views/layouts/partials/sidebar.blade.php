@@ -28,7 +28,7 @@
     <!-- Layouts -->
     <li class="menu-item {{ request()->is('users') ? 'active' : '' }}">
       <a href="{{route('users.index')}}" class="menu-link">
-        <i class="menu-icon tf-icons bx bx-group"></i>
+        <i class="menu-icon tf-icons bx bx-user"></i>
         <div class="text-truncate" data-i18n="Layouts">Users</div>
       </a>
     </li>
@@ -60,7 +60,14 @@
   </a>
 </li>
 
-    <li class="menu-header small text-uppercase"><span class="menu-header-text">Connection &amp; Billings</span></li>
+    <li class="menu-header small text-uppercase"><span class="menu-header-text">Connections</span></li>
+    <li class="menu-item">
+      <a href="javascript:void(0);" class="menu-link">
+        <i class="menu-icon tf-icons bx bx-group"></i>
+        <div class="text-truncate" data-i18n="Layouts">Customers</div>
+      </a>
+    </li>
+
     <li class="menu-item">
       <a href="javascript:void(0);" class="menu-link">
         <i class="menu-icon tf-icons bx bx-tachometer"></i>
@@ -68,6 +75,7 @@
       </a>
     </li>
 
+    <li class="menu-header small text-uppercase"><span class="menu-header-text">Billing &amp; Payments</span></li>
     <li class="menu-item">
       <a href="javascript:void(0);" class="menu-link">
         <i class="menu-icon tf-icons bx bx-layout"></i>
@@ -86,7 +94,7 @@
     <li class="menu-item {{ request()->is('') ? 'active' : '' }}">
       <a href="javascript:void(0);" class="menu-link">
         <i class="menu-icon tf-icons bx bx-help-circle"></i>
-        <div class="text-truncate" data-i18n="Layouts">Tickets</div>
+        <div class="text-truncate" data-i18n="Layouts">Support Tickets</div>
       </a>
     </li>
 
