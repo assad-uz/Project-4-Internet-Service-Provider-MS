@@ -43,6 +43,7 @@ Route::resource('customers', CustomerController::class);
 Route::resource('connections', ConnectionController::class);
 
 // Billings
+Route::get('billings/{billing}/invoice', [BillingController::class, 'invoice'])->name('billings.invoice');
 Route::resource('billings', BillingController::class);
 
 // Payments

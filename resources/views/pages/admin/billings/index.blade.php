@@ -53,16 +53,22 @@
                     @endphp
                     <span class="badge bg-{{ $statusClass }}">{{ ucfirst(str_replace('_', ' ', $bill->status)) }}</span>
                 </td>
+                
                 <td class="text-center">
-                    <a href="{{ route('billings.edit', $bill->id) }}" class="btn btn-warning btn-sm">Edit</a>
-                    <form action="{{ route('billings.destroy', $bill->id) }}" method="POST"
-                        class="d-inline-block"
-                        onsubmit="return confirm('Are you sure you want to delete this bill?');">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
-                    </form>
-                </td>
+    <a href="{{ route('billings.invoice', $bill->id) }}" class="btn btn-info btn-sm" target="_blank" title="View Invoice">
+        <i class="bx bx-receipt"></i> 
+    </a>
+    
+    <a href="{{ route('billings.edit', $bill->id) }}" class="btn btn-warning btn-sm">Edit</a>
+    
+    <form action="{{ route('billings.destroy', $bill->id) }}" method="POST"
+        class="d-inline-block"
+        onsubmit="return confirm('Are you sure you want to delete this bill?');">
+        @csrf
+        @method('DELETE')
+        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+    </form>
+</td>
             </tr>
             @endforeach
             @if($billings->isEmpty())

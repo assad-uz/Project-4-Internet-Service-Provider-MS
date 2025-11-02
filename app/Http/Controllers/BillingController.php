@@ -114,4 +114,30 @@ class BillingController extends Controller
         return redirect()->route('billings.index')
                          ->with('success', 'Billing record deleted successfully.');
     }
+
+    /**
+     * 7. INVOICE: একটি নির্দিষ্ট বিলের জন্য ইনভয়েস দেখানোর জন্য
+     */
+    public function invoice(Billing $billing)
+    {
+        // 💡 প্রয়োজনীয় সমস্ত সম্পর্ক লোড করা
+        $billing->load([
+            'connection', 
+            'package', 
+            'payments',
+            'connection.distributionBox.area' // কানেকশনের মাধ্যমে বক্স ও এরিয়ার তথ্য লোড করা
+        ]);
+
+        // মোট পরিশোধিত অর্থ গণনা
+        $totalPaid = $billing->payments->sum('amount');
+        
+        // মোট নেট অর্থ (Amount - Discount)
+        $netAmount = $billing->amount - $billing->discount;
+
+        // বকেয়া অর্থ গণনা
+        $dueAmount = max(0, $netAmount - $totalPaid); // Due 0 এর নিচে হবে না
+        
+        // ভিউতে ডেটা পাঠানো
+        return view('pages.admin.billings.invoice', compact('billing', 'totalPaid', 'netAmount', 'dueAmount'));
+    }
 }
