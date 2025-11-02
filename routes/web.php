@@ -4,7 +4,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AreaController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BillingController;
 use App\Http\Controllers\PackageController;
 use App\Http\Controllers\PaymentController;
@@ -12,6 +11,7 @@ use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\ConnectionController;
 use App\Http\Controllers\CustomerTypeController;
 use App\Http\Controllers\DistributionBoxController;
+use App\Http\Controllers\DashboardController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -19,7 +19,7 @@ use App\Http\Controllers\DistributionBoxController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
 // Users
 Route::resource('users', UserController::class);

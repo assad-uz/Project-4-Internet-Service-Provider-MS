@@ -10,102 +10,77 @@
 @section('content')
 <div class="container py-4">
     <div class="row g-3">
-        {{-- Card 1 --}}
+        {{-- Card 1: Total Customers --}}
         <div class="col-12 col-sm-6 col-md-3">
             <div class="card shadow-sm border-0">
                 <div class="card-body text-center">
-                    <h6 class="text-muted">Total Users</h6>
-                    <h3 class="fw-bold">120</h3>
+                    <h6 class="text-muted">Total Customers</h6>
+                    <h3 class="fw-bold">{{ number_format($totalCustomers) }}</h3>
                 </div>
             </div>
         </div>
 
-        {{-- Card 2 --}}
+        {{-- Card 2: Active Customers --}}
         <div class="col-12 col-sm-6 col-md-3">
             <div class="card shadow-sm border-0">
                 <div class="card-body text-center">
-                    <h6 class="text-muted">Active Users</h6>
-                    <h3 class="fw-bold text-success">95</h3>
+                    <h6 class="text-muted">Active Customers</h6>
+                    <h3 class="fw-bold text-success">{{ number_format($activeCustomers) }}</h3>
                 </div>
             </div>
         </div>
 
-        {{-- Card 3 --}}
+        {{-- Card 3: Inactive Customers --}}
         <div class="col-12 col-sm-6 col-md-3">
             <div class="card shadow-sm border-0">
                 <div class="card-body text-center">
-                    <h6 class="text-muted">Inactive Users</h6>
-                    <h3 class="fw-bold text-danger">25</h3>
+                    <h6 class="text-muted">Inactive Customers</h6>
+                    <h3 class="fw-bold text-danger">{{ number_format($inactiveCustomers) }}</h3>
                 </div>
             </div>
         </div>
 
-        {{-- Card 4 --}}
+        {{-- Card 4: Pending Support Ticket --}}
         <div class="col-12 col-sm-6 col-md-3">
             <div class="card shadow-sm border-0">
                 <div class="card-body text-center">
                     <h6 class="text-muted">Pending Support Ticket</h6>
-                    <h3 class="fw-bold text-warning">8</h3>
+                    <h3 class="fw-bold text-warning">{{ number_format($pendingTickets) }}</h3>
                 </div>
             </div>
         </div>
 
-        {{-- Card 5 --}}
+        {{-- প্যাকেজ অনুযায়ী ব্যবহারকারী (ডাইনামিক লুপ) --}}
+        @foreach($packageCounts as $packageStat)
         <div class="col-12 col-sm-6 col-md-3">
             <div class="card shadow-sm border-0">
                 <div class="card-body text-center">
-                    <h6 class="text-muted">Total Users | Package 01</h6>
-                    <h3 class="fw-bold">35</h3>
+                    <h6 class="text-muted">Total Users | {{ $packageStat->package->package_name ?? 'N/A' }}</h6>
+                    <h3 class="fw-bold">{{ number_format($packageStat->total) }}</h3>
+                </div>
+            </div>
+        </div>
+        @endforeach
+        
+        {{-- আপনার স্ট্যাটিক প্যাকেজ কার্ডগুলি সরিয়ে দিন (Card 5-8) --}}
+
+
+        {{-- Card 9: Total Pending Payments (বকেয়া বিলের সংখ্যা) --}}
+        <div class="col-12 col-sm-6 col-md-3">
+            <div class="card shadow-sm border-0">
+                <div class="card-body text-center">
+                    <h6 class="text-muted">Total Due Bills</h6>
+                    <h3 class="fw-bold text-danger">{{ number_format($totalDueBillingsCount) }}</h3>
                 </div>
             </div>
         </div>
 
-        {{-- Card 6 --}}
+        {{-- Card 10: Total Sales Amount (Current Month Collection) --}}
         <div class="col-12 col-sm-6 col-md-3">
             <div class="card shadow-sm border-0">
                 <div class="card-body text-center">
-                    <h6 class="text-muted">Total Users | Package 02</h6>
-                    <h3 class="fw-bold">28</h3>
-                </div>
-            </div>
-        </div>
-
-        {{-- Card 7 --}}
-        <div class="col-12 col-sm-6 col-md-3">
-            <div class="card shadow-sm border-0">
-                <div class="card-body text-center">
-                    <h6 class="text-muted">Total Users | Package 03</h6>
-                    <h3 class="fw-bold">22</h3>
-                </div>
-            </div>
-        </div>
-
-        {{-- Card 8 --}}
-        <div class="col-12 col-sm-6 col-md-3">
-            <div class="card shadow-sm border-0">
-                <div class="card-body text-center">
-                    <h6 class="text-muted">Total Users | Package 04</h6>
-                    <h3 class="fw-bold">15</h3>
-                </div>
-            </div>
-        </div>
-
-        {{-- Card 9 --}}
-        <div class="col-12 col-sm-6 col-md-3">
-            <div class="card shadow-sm border-0">
-                <div class="card-body text-center">
-                    <h6 class="text-muted">Total Pending Payments</h6>
-                    <h3 class="fw-bold text-danger">5</h3>
-                </div>
-            </div>
-        </div>
-
-        {{-- Card 10 --}}
-        <div class="col-12 col-sm-6 col-md-3">
-            <div class="card shadow-sm border-0">
-                <div class="card-body text-center">
-                    <h6 class="text-muted">Total Sales Amount</h6>
-                    <h3 class="fw-bold text-primary">$12,450</h3>
+                    <h6 class="text-muted">Collection ({{ Carbon\Carbon::now()->format('M Y') }})</h6>
+                    <h3 class="fw-bold text-primary">৳ {{ number_format($totalSalesAmount, 2) }}</h3>
                 </div>
             </div>
         </div>
