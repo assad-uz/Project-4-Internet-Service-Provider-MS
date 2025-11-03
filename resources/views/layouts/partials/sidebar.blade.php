@@ -113,8 +113,8 @@
     </li>
 
     <li class="menu-header small text-uppercase"><span class="menu-header-text">Report</span></li>
-    <li class="menu-item {{ request()->is('report') ? 'active' : '' }}">
-      <a href="/report" class="menu-link">
+    <li class="menu-item {{ request()->is('reports') ? 'active' : '' }}">
+      <a href="/reports" class="menu-link">
         <i class="menu-icon tf-icons bx bx-edit"></i>
         <div class="text-truncate" data-i18n="Layouts">Reports</div>
       </a>

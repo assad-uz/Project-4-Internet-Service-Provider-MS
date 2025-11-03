@@ -4,14 +4,15 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AreaController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ReportController;
 use App\Http\Controllers\BillingController;
 use App\Http\Controllers\PackageController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ConnectionController;
 use App\Http\Controllers\CustomerTypeController;
 use App\Http\Controllers\DistributionBoxController;
-use App\Http\Controllers\DashboardController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -50,6 +51,6 @@ Route::resource('billings', BillingController::class);
 Route::resource('payments', PaymentController::class);
 
 // Reports
-Route::view('/report', 'pages.admin.reports.report')->name('report');
+Route::get('/reports', [ReportController::class, 'index'])->name('pages.admin.reports.index');
 
 
