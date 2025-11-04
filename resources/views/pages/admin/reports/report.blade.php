@@ -23,7 +23,7 @@
 <!-- Filters (Dynamic) -->
 <div class="card mb-4">
     <div class="card-body">
-        <form method="GET" action="{{ route('reports.index') }}" class="row g-3">
+        <form method="GET" action="{{ route('pages.admin.reports.index') }}" class="row g-3">
             
             {{-- From Date Filter --}}
             <div class="col-md-3">
@@ -59,7 +59,7 @@
                 </button>
                 
                 {{-- Reset Button --}}
-                <a href="{{ route('reports.index') }}" class="btn btn-outline-secondary">
+                <a href="{{ route('pages.admin.reports.index') }}" class="btn btn-outline-secondary">
                     <i class="fas fa-redo me-1"></i> Reset
                 </a>
                 
@@ -150,7 +150,7 @@
                         <small class="d-block text-muted">{{ $connection->customer->phone ?? 'N/A' }}</small>
                     </td>
                     <td>{{ $connection->package->package_name ?? 'N/A' }}</td>
-                    <td>{{ \Carbon\Carbon::parse($connection->start_date)->format('Y-m-d') }}</td>
+                    <td>{{ \Carbon\Carbon::parse($connection->connection_date)->format('Y-m-d') }}</td>
                     <td>
                         @php
                             $statusClass = [

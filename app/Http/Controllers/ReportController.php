@@ -40,17 +40,17 @@ class ReportController extends Controller
 
         // ৩. রিপোর্ট টেবিলের জন্য ডেটা (Connections)
         $query = Connection::with('customer', 'package') // সম্পর্ক লোড করা
-                           ->whereBetween('start_date', [$startDate, $endDate]);
+                           ->whereBetween('connection_date', [$startDate, $endDate]);
 
         if ($packageId) {
             $query->where('package_id', $packageId);
         }
         
         // কানেকশনগুলো লোড করা
-        $connections = $query->orderBy('start_date', 'desc')->get();
+        $connections = $query->orderBy('connection_date', 'desc')->get();
         
         // ভিউতে ডেটা পাঠানো
-        return view('pages.admin.report', [
+        return view('pages.admin.reports.report', [
             'packages' => $packages,
             'connections' => $connections,
             'startDate' => $startDate->format('Y-m-d'),
