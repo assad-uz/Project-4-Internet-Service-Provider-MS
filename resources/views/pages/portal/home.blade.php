@@ -9,10 +9,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title> Home Three || Zeinet || Zeinet HTML 5 Template </title>
     <!-- favicons Icons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="{{asset('assets/images/favicons/apple-touch-icon.png')}}" />
-    <link rel="icon" type="image/png" sizes="32x32" href="{{asset('assets/images/favicons/favicon-32x32.png')}}" />
-    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('assets/images/favicons/favicon-16x16.png')}}" />
-    <link rel="manifest" href="{{asset('assets/images/favicons/site.webmanifest')}}" />
+    <link rel="apple-touch-icon" sizes="180x180" href="{{asset('portal-src/assets/images/favicons/apple-touch-icon.png')}}" />
+    <link rel="icon" type="image/png" sizes="32x32" href="{{asset('portal-src/assets/images/favicons/favicon-32x32.png')}}" />
+    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('portal-src/assets/images/favicons/favicon-16x16.png')}}" />
+    <link rel="manifest" href="{{asset('portal-src/assets/images/favicons/site.webmanifest')}}" />
     <meta name="description" content="Zeinet HTML 5 Template " />
 
     <!-- fonts -->
@@ -23,30 +23,30 @@
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap"
         rel="stylesheet">
 
-    <link rel="stylesheet" href="{{asset('assets/vendors/bootstrap/css/bootstrap.min.css')}}" />
-    <link rel="stylesheet" href="{{asset('assets/vendors/animate/animate.min.css')}}" />
-    <link rel="stylesheet" href="{{asset('assets/vendors/animate/custom-animate.css')}}" />
-    <link rel="stylesheet" href="{{asset('assets/vendors/fontawesome/css/all.min.css')}}" />
-    <link rel="stylesheet" href="{{asset('assets/vendors/jarallax/jarallax.css')}}" />
-    <link rel="stylesheet" href="{{asset('assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css')}}" />
-    <link rel="stylesheet" href="{{asset('assets/vendors/nouislider/nouislider.min.css')}}" />
-    <link rel="stylesheet" href="{{asset('assets/vendors/nouislider/nouislider.pips.css')}}" />
-    <link rel="stylesheet" href="{{asset('assets/vendors/odometer/odometer.min.css')}}" />
-    <link rel="stylesheet" href="{{asset('assets/vendors/swiper/swiper.min.css')}}" />
-    <link rel="stylesheet" href="{{('assets/vendors/zeinet-icons/style.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/vendors/tiny-slider/tiny-slider.min.css')}}" />
-    <link rel="stylesheet" href="{{asset('assets/vendors/reey-font/stylesheet.css')}}" />
-    <link rel="stylesheet" href="{{asset('assets/vendors/owl-carousel/owl.carousel.min.css')}}" />
-    <link rel="stylesheet" href="{{asset('assets/vendors/owl-carousel/owl.theme.default.min.css')}}" />
-    <link rel="stylesheet" href="{{asset('assets/vendors/bxslider/jquery.bxslider.css')}}" />
-    <link rel="stylesheet" href="{{asset('assets/vendors/bootstrap-select/css/bootstrap-select.min.css')}}" />
-    <link rel="stylesheet" href="{{asset('assets/vendors/vegas/vegas.min.css')}}" />
-    <link rel="stylesheet" href="{{asset('assets/vendors/jquery-ui/jquery-ui.css')}}" />
-    <link rel="stylesheet" href="{{asset('assets/vendors/timepicker/timePicker.css')}}" />
+    <link rel="stylesheet" href="{{asset('portal-src/assets/vendors/bootstrap/css/bootstrap.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('portal-src/assets/vendors/animate/animate.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('portal-src/assets/vendors/animate/custom-animate.css')}}" />
+    <link rel="stylesheet" href="{{asset('portal-src/assets/vendors/fontawesome/css/all.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('portal-src/assets/vendors/jarallax/jarallax.css')}}" />
+    <link rel="stylesheet" href="{{asset('portal-src/assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css')}}" />
+    <link rel="stylesheet" href="{{asset('portal-src/assets/vendors/nouislider/nouislider.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('portal-src/assets/vendors/nouislider/nouislider.pips.css')}}" />
+    <link rel="stylesheet" href="{{asset('portal-src/assets/vendors/odometer/odometer.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('portal-src/assets/vendors/swiper/swiper.min.css')}}" />
+    <link rel="stylesheet" href="{{('portal-src/assets/vendors/zeinet-icons/style.css')}}">
+    <link rel="stylesheet" href="{{asset('portal-src/assets/vendors/tiny-slider/tiny-slider.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('portal-src/assets/vendors/reey-font/stylesheet.css')}}" />
+    <link rel="stylesheet" href="{{asset('portal-src/assets/vendors/owl-carousel/owl.carousel.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('portal-src/assets/vendors/owl-carousel/owl.theme.default.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('portal-src/assets/vendors/bxslider/jquery.bxslider.css')}}" />
+    <link rel="stylesheet" href="{{asset('portal-src/assets/vendors/bootstrap-select/css/bootstrap-select.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('portal-src/assets/vendors/vegas/vegas.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('portal-src/assets/vendors/jquery-ui/jquery-ui.css')}}" />
+    <link rel="stylesheet" href="{{asset('portal-src/assets/vendors/timepicker/timePicker.css')}}" />
 
     <!-- template styles -->
-    <link rel="stylesheet" href="{{asset('assets/css/zeinet.css')}}" />
-    <link rel="stylesheet" href="{{asset('assets/css/zeinet-responsive.html')}}" />
+    <link rel="stylesheet" href="{{asset('portal-src/assets/css/zeinet.css')}}" />
+    <link rel="stylesheet" href="{{asset('portal-src/assets/css/zeinet-responsive.html')}}" />
 </head>
 
 <body class="custom-cursor">
@@ -110,7 +110,7 @@
                     <div class="main-menu-three__wrapper-inner clearfix">
                         <div class="main-menu-three__left">
                             <div class="main-menu-three__logo">
-                                <a href="index.html"><img src="{{asset('assets/images/resources/logo-1.png')}}" alt="" width="140"
+                                <a href="index.html"><img src="{{asset('portal-src/assets/images/resources/logo-1.png')}}" alt="" width="140"
                                         height="48"></a>
                             </div>
                         </div>
@@ -191,7 +191,7 @@
 
                     <div class="swiper-slide">
                         <div class="image-layer-three"
-                            style="background-image: url(assets/images/backgrounds/main-slider-3-1.jpg);"></div>
+                            style="background-image: url(portal-src/assets/images/backgrounds/main-slider-3-1.jpg);"></div>
                         <!-- /.image-layer -->
 
                         <div class="container">
@@ -205,7 +205,7 @@
                                             <a href="about.html" class="thm-btn main-slider__btn"> Discover more</a>
                                         </div>
                                         <div class="main-slider-three__shape-1">
-                                            <img src="{{asset('assets/images/shapes/main-slider-three-shape-2.png')}}" alt="">
+                                            <img src="{{asset('portal-src/assets/images/shapes/main-slider-three-shape-2.png')}}" alt="">
                                         </div>
                                     </div>
                                 </div>
@@ -215,7 +215,7 @@
 
                     <div class="swiper-slide">
                         <div class="image-layer-three"
-                            style="background-image: url(assets/images/backgrounds/main-slider-3-2.jpg);"></div>
+                            style="background-image: url(portal-src/assets/images/backgrounds/main-slider-3-2.jpg);"></div>
                         <!-- /.image-layer -->
 
                         <div class="container">
@@ -229,7 +229,7 @@
                                             <a href="about.html" class="thm-btn main-slider__btn"> Discover more</a>
                                         </div>
                                         <div class="main-slider-three__shape-1">
-                                            <img src="{{asset('assets/images/shapes/main-slider-three-shape-2.png')}}" alt="">
+                                            <img src="{{asset('portal-src/assets/images/shapes/main-slider-three-shape-2.png')}}" alt="">
                                         </div>
                                     </div>
                                 </div>
@@ -239,7 +239,7 @@
 
                     <div class="swiper-slide">
                         <div class="image-layer-three"
-                            style="background-image: url(assets/images/backgrounds/main-slider-3-3.jpg);"></div>
+                            style="background-image: url(portal-src/assets/images/backgrounds/main-slider-3-3.jpg);"></div>
                         <!-- /.image-layer -->
 
                         <div class="container">
@@ -253,7 +253,7 @@
                                             <a href="about.html" class="thm-btn main-slider__btn"> Discover more</a>
                                         </div>
                                         <div class="main-slider-three__shape-1">
-                                            <img src="{{asset('assets/images/shapes/main-slider-three-shape-2.png')}}" alt="">
+                                            <img src="{{asset('portal-src/assets/images/shapes/main-slider-three-shape-2.png')}}" alt="">
                                         </div>
                                     </div>
                                 </div>
@@ -282,7 +282,7 @@
             <div class="container">
                 <div class="wifi-pack__inner">
                     <div class="wifi-pack-shape float-bob-x">
-                        <img src="{{asset('assets/images/shapes/wifi-pack-shape-1.png')}}" alt="">
+                        <img src="{{asset('portal-src/assets/images/shapes/wifi-pack-shape-1.png')}}" alt="">
                     </div>
                     <div class="wifi-pack__left">
                         <div class="wifi-pack__icon">
@@ -348,10 +348,10 @@
                             <div class="about-two__img-box wow slideInRight" data-wow-delay="100ms"
                                 data-wow-duration="2500ms">
                                 <div class="about-two__img">
-                                    <img src="{{asset('assets/images/resources/about-two-img-1.jpg')}}" alt="">
+                                    <img src="{{asset('portal-src/assets/images/resources/about-two-img-1.jpg')}}" alt="">
                                 </div>
                                 <div class="about-two__img-two">
-                                    <img src="{{asset('assets/images/resources/about-two-img-2.jpg')}}" alt="">
+                                    <img src="{{asset('portal-src/assets/images/resources/about-two-img-2.jpg')}}" alt="">
                                 </div>
                             </div>
                         </div>
@@ -364,10 +364,10 @@
         <!--Services One Start-->
         <section class="services-one" id="services">
             <div class="services-one-shape-1 float-bob-x">
-                <img src="{{asset('assets/images/shapes/services-one-shape-1.png')}}" alt="">
+                <img src="{{asset('portal-src/assets/images/shapes/services-one-shape-1.png')}}" alt="">
             </div>
             <div class="services-one-shape-2 float-bob-y">
-                <img src="{{asset('assets/images/shapes/services-one-shape-2.png')}}" alt="">
+                <img src="{{asset('portal-src/assets/images/shapes/services-one-shape-2.png')}}" alt="">
             </div>
             <div class="container">
                 <div class="services-one__top">
@@ -396,7 +396,7 @@
                             <div class="services-one__single">
                                 <div class="services-one__single-inner">
                                     <div class="services-one__single-bg"
-                                        style="background-image: url(assets/images/backgrounds/services-one-single-bg.jpg);">
+                                        style="background-image: url(portal-src/assets/images/backgrounds/services-one-single-bg.jpg);">
                                     </div>
                                     <div class="services-one__icon">
                                         <span class="icon-tv-box"></span>
@@ -416,7 +416,7 @@
                             <div class="services-one__single">
                                 <div class="services-one__single-inner">
                                     <div class="services-one__single-bg"
-                                        style="background-image: url(assets/images/backgrounds/services-one-single-bg.jpg);">
+                                        style="background-image: url(portal-src/assets/images/backgrounds/services-one-single-bg.jpg);">
                                     </div>
                                     <div class="services-one__icon">
                                         <span class="icon-wifi-router"></span>
@@ -436,7 +436,7 @@
                             <div class="services-one__single">
                                 <div class="services-one__single-inner">
                                     <div class="services-one__single-bg"
-                                        style="background-image: url(assets/images/backgrounds/services-one-single-bg.jpg);">
+                                        style="background-image: url(portal-src/assets/images/backgrounds/services-one-single-bg.jpg);">
                                     </div>
                                     <div class="services-one__icon">
                                         <span class="icon-mobile-app"></span>
@@ -457,7 +457,7 @@
                             <div class="services-one__single">
                                 <div class="services-one__single-inner">
                                     <div class="services-one__single-bg"
-                                        style="background-image: url(assets/images/backgrounds/services-one-single-bg.jpg);">
+                                        style="background-image: url(portal-src/assets/images/backgrounds/services-one-single-bg.jpg);">
                                     </div>
                                     <div class="services-one__icon">
                                         <span class="icon-high-speed"></span>
@@ -483,11 +483,11 @@
             <div class="benefits__wrapper">
                 <div class="benefits__left">
                     <div class="benefits__left-bg"
-                        style="background-image: url(assets/images/backgrounds/benefits-bg-one.jpg);"></div>
+                        style="background-image: url(portal-src/assets/images/backgrounds/benefits-bg-one.jpg);"></div>
                 </div>
                 <div class="benefits__right">
                     <div class="benefits-shape-one"
-                        style="background-image: url(assets/images/shapes/benefits-shape-1.png);">
+                        style="background-image: url(portal-src/assets/images/shapes/benefits-shape-1.png);">
                     </div>
                     <div class="benefits__content-box">
                         <div class="section-title text-left">
@@ -753,16 +753,16 @@
         <!--Testimonial Two Start-->
         <section class="testimonial-two" id="testimonial">
             <div class="testimonial-two-bg"
-                style="background-image: url(assets/images/backgrounds/testimonial-two-bg.png);"></div>
+                style="background-image: url(portal-src/assets/images/backgrounds/testimonial-two-bg.png);"></div>
             <div class="container">
                 <div class="row">
                     <div class="col-xl-5 col-lg-5">
                         <div class="testimonial-two__left">
                             <div class="testimonial-two__img">
-                                <img src="{{asset('assets/images/testimonial/testimonial-two-left-img.jpg')}}" alt="">
+                                <img src="{{asset('portal-src/assets/images/testimonial/testimonial-two-left-img.jpg')}}" alt="">
                                 <div class="testimonial-two__toggle">
                                     <div class="testimonial-two__toggle-shape"
-                                        style="background-image: url(assets/images/shapes/testimonial-two-toggle-shape.png);">
+                                        style="background-image: url(portal-src/assets/images/shapes/testimonial-two-toggle-shape.png);">
                                     </div>
                                     <p>Happy <br> customers</p>
                                 </div>
@@ -782,7 +782,7 @@
                                             <div class="swiper-slide">
                                                 <div class="testimonial-two__conent-box">
                                                     <div class="testimonial-two__conent-img">
-                                                        <img src="{{asset('assets/images/testimonial/testimonial-two-content-img-1.jpg')}}"
+                                                        <img src="{{asset('portal-src/assets/images/testimonial/testimonial-two-content-img-1.jpg')}}"
                                                             alt="">
                                                         <div class="testimonial-two__quote">
                                                             <span class="icon-quote"></span>
@@ -808,7 +808,7 @@
                                             <div class="swiper-slide">
                                                 <div class="testimonial-two__conent-box">
                                                     <div class="testimonial-two__conent-img">
-                                                        <img src="{{asset('assets/images/testimonial/testimonial-two-content-img-2.jpg')}}"
+                                                        <img src="{{asset('portal-src/assets/images/testimonial/testimonial-two-content-img-2.jpg')}}"
                                                             alt="">
                                                         <div class="testimonial-two__quote">
                                                             <span class="icon-quote"></span>
@@ -834,7 +834,7 @@
                                             <div class="swiper-slide">
                                                 <div class="testimonial-two__conent-box">
                                                     <div class="testimonial-two__conent-img">
-                                                        <img src="{{asset('assets/images/testimonial/testimonial-two-content-img-3.jpg')}}"
+                                                        <img src="{{asset('portal-src/assets/images/testimonial/testimonial-two-content-img-3.jpg')}}"
                                                             alt="">
                                                         <div class="testimonial-two__quote">
                                                             <span class="icon-quote"></span>
@@ -860,7 +860,7 @@
                                             <div class="swiper-slide">
                                                 <div class="testimonial-two__conent-box">
                                                     <div class="testimonial-two__conent-img">
-                                                        <img src="{{asset('assets/images/testimonial/testimonial-two-content-img-4.jpg')}}"
+                                                        <img src="{{asset('portal-src/assets/images/testimonial/testimonial-two-content-img-4.jpg')}}"
                                                             alt="">
                                                         <div class="testimonial-two__quote">
                                                             <span class="icon-quote"></span>
@@ -890,22 +890,22 @@
                                     <div class="swiper-wrapper">
                                         <div class="swiper-slide">
                                             <div class="testimonial-two__img-holder">
-                                                <img src="{{asset('assets/images/testimonial/testimonial-2-1.jpg')}}" alt="">
+                                                <img src="{{asset('portal-src/assets/images/testimonial/testimonial-2-1.jpg')}}" alt="">
                                             </div>
                                         </div>
                                         <div class="swiper-slide">
                                             <div class="testimonial-two__img-holder">
-                                                <img src="{{asset('assets/images/testimonial/testimonial-2-2.jpg')}}" alt="">
+                                                <img src="{{asset('portal-src/assets/images/testimonial/testimonial-2-2.jpg')}}" alt="">
                                             </div>
                                         </div>
                                         <div class="swiper-slide">
                                             <div class="testimonial-two__img-holder">
-                                                <img src="{{asset('assets/images/testimonial/testimonial-2-3.jpg')}}" alt="">
+                                                <img src="{{asset('portal-src/assets/images/testimonial/testimonial-2-3.jpg')}}" alt="">
                                             </div>
                                         </div>
                                         <div class="swiper-slide">
                                             <div class="testimonial-two__img-holder">
-                                                <img src="{{asset('assets/images/testimonial/testimonial-2-4.jpg')}}" alt="">
+                                                <img src="{{asset('portal-src/assets/images/testimonial/testimonial-2-4.jpg')}}" alt="">
                                             </div>
                                         </div>
                                     </div>
@@ -921,7 +921,7 @@
         <!--Entertainment Start-->
         <section class="entertainment">
             <div class="entertainment-shape-bg"
-                style="background-image: url(assets/images/shapes/entertainment-shape-bg.png);"></div>
+                style="background-image: url(portal-src/assets/images/shapes/entertainment-shape-bg.png);"></div>
             <div class="container">
                 <div class="section-title text-center">
                     <span class="section-title__tagline">stream without a stop</span>
@@ -932,7 +932,7 @@
                     <div class="col-xl-6 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
                         <div class="entertainment__single">
                             <div class="entertainment__img">
-                                <img src="{{asset('assets/images/resources/entertainment-img-1-1.jpg')}}" alt="">
+                                <img src="{{asset('portal-src/assets/images/resources/entertainment-img-1-1.jpg')}}" alt="">
                                 <div class="entertainment__hover-box">
                                     <p class="entertainment__hover-text">2020 <i class="fa fa-star"></i>
                                         <span>6.5</span> </p>
@@ -954,7 +954,7 @@
                     <div class="col-xl-6 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
                         <div class="entertainment__single">
                             <div class="entertainment__img">
-                                <img src="{{asset('assets/images/resources/entertainment-img-1-2.jpg')}}" alt="">
+                                <img src="{{asset('portal-src/assets/images/resources/entertainment-img-1-2.jpg')}}" alt="">
                                 <div class="entertainment__hover-box">
                                     <p class="entertainment__hover-text">2020 <i class="fa fa-star"></i>
                                         <span>6.5</span> </p>
@@ -976,7 +976,7 @@
                     <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="300ms">
                         <div class="entertainment__single">
                             <div class="entertainment__img">
-                                <img src="{{asset('assets/images/resources/entertainment-img-1-3.jpg')}}" alt="">
+                                <img src="{{asset('portal-src/assets/images/resources/entertainment-img-1-3.jpg')}}" alt="">
                                 <div class="entertainment__hover-box">
                                     <p class="entertainment__hover-text">2020 <i class="fa fa-star"></i>
                                         <span>6.5</span> </p>
@@ -998,7 +998,7 @@
                     <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
                         <div class="entertainment__single">
                             <div class="entertainment__img">
-                                <img src="{{asset('assets/images/resources/entertainment-img-1-4.jpg')}}" alt="">
+                                <img src="{{asset('portal-src/assets/images/resources/entertainment-img-1-4.jpg')}}" alt="">
                                 <div class="entertainment__hover-box">
                                     <p class="entertainment__hover-text">2020 <i class="fa fa-star"></i>
                                         <span>6.5</span> </p>
@@ -1020,7 +1020,7 @@
                     <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="500ms">
                         <div class="entertainment__single">
                             <div class="entertainment__img">
-                                <img src="{{asset('assets/images/resources/entertainment-img-1-5.jpg')}}" alt="">
+                                <img src="{{asset('portal-src/assets/images/resources/entertainment-img-1-5.jpg')}}" alt="">
                                 <div class="entertainment__hover-box">
                                     <p class="entertainment__hover-text">2020 <i class="fa fa-star"></i>
                                         <span>6.5</span> </p>
@@ -1046,10 +1046,10 @@
         <!--Brand One Start-->
         <section class="brand-one">
             <div class="brand-one-shape-1 float-bob-x">
-                <img src="{{asset('assets/images/shapes/brand-one-shape-1.png')}}" alt="">
+                <img src="{{asset('portal-src/assets/images/shapes/brand-one-shape-1.png')}}" alt="">
             </div>
             <div class="brand-one-shape-2 float-bob-y">
-                <img src="{{asset('assets/images/shapes/brand-one-shape-2.png')}}" alt="">
+                <img src="{{asset('portal-src/assets/images/shapes/brand-one-shape-2.png')}}" alt="">
             </div>
             <div class="container">
                 <div class="thm-swiper__slider swiper-container" data-swiper-options='{"spaceBetween": 100, "slidesPerView": 5, "autoplay": { "delay": 5000 }, "breakpoints": {
@@ -1080,34 +1080,34 @@
                                 }}'>
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
-                            <img src="{{asset('assets/images/brand/brand-1-1.png')}}" alt="">
+                            <img src="{{asset('portal-src/assets/images/brand/brand-1-1.png')}}" alt="">
                         </div><!-- /.swiper-slide -->
                         <div class="swiper-slide">
-                            <img src="{{asset('assets/images/brand/brand-1-2.png')}}" alt="">
+                            <img src="{{asset('portal-src/assets/images/brand/brand-1-2.png')}}" alt="">
                         </div><!-- /.swiper-slide -->
                         <div class="swiper-slide">
-                            <img src="{{asset('assets/images/brand/brand-1-3.png')}}" alt="">
+                            <img src="{{asset('portal-src/assets/images/brand/brand-1-3.png')}}" alt="">
                         </div><!-- /.swiper-slide -->
                         <div class="swiper-slide">
-                            <img src="{{asset('assets/images/brand/brand-1-4.png')}}" alt="">
+                            <img src="{{asset('portal-src/assets/images/brand/brand-1-4.png')}}" alt="">
                         </div><!-- /.swiper-slide -->
                         <div class="swiper-slide">
-                            <img src="{{asset('assets/images/brand/brand-1-5.png')}}" alt="">
+                            <img src="{{asset('portal-src/assets/images/brand/brand-1-5.png')}}" alt="">
                         </div><!-- /.swiper-slide -->
                         <div class="swiper-slide">
-                            <img src="{{asset('assets/images/brand/brand-1-1.png')}}" alt="">
+                            <img src="{{asset('portal-src/assets/images/brand/brand-1-1.png')}}" alt="">
                         </div><!-- /.swiper-slide -->
                         <div class="swiper-slide">
-                            <img src="{{asset('assets/images/brand/brand-1-2.png')}}" alt="">
+                            <img src="{{asset('portal-src/assets/images/brand/brand-1-2.png')}}" alt="">
                         </div><!-- /.swiper-slide -->
                         <div class="swiper-slide">
-                            <img src="{{asset('assets/images/brand/brand-1-3.png')}}" alt="">
+                            <img src="{{asset('portal-src/assets/images/brand/brand-1-3.png')}}" alt="">
                         </div><!-- /.swiper-slide -->
                         <div class="swiper-slide">
-                            <img src="{{asset('assets/images/brand/brand-1-4.png')}}" alt="">
+                            <img src="{{asset('portal-src/assets/images/brand/brand-1-4.png')}}" alt="">
                         </div><!-- /.swiper-slide -->
                         <div class="swiper-slide">
-                            <img src="{{asset('assets/images/brand/brand-1-5.png')}}" alt="">
+                            <img src="{{asset('portal-src/assets/images/brand/brand-1-5.png')}}" alt="">
                         </div><!-- /.swiper-slide -->
                     </div>
                 </div>
@@ -1127,7 +1127,7 @@
                     <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="100ms">
                         <div class="news-one__single">
                             <div class="news-one__img-box">
-                                <img src="{{asset('assets/images/blog/news-1.1.jpg')}}" alt="">
+                                <img src="{{asset('portal-src/assets/images/blog/news-1.1.jpg')}}" alt="">
                                 <a href="news-details.html"><span class="icon-plus-symbol"></span></a>
                             </div>
                             <div class="news-one__content-box">
@@ -1158,7 +1158,7 @@
                     <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="200ms">
                         <div class="news-one__single">
                             <div class="news-one__img-box">
-                                <img src="{{asset('assets/images/blog/news-1.2.jpg')}}" alt="">
+                                <img src="{{asset('portal-src/assets/images/blog/news-1.2.jpg')}}" alt="">
                                 <a href="news-details.html"><span class="icon-plus-symbol"></span></a>
                             </div>
                             <div class="news-one__content-box">
@@ -1188,7 +1188,7 @@
                     <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="300ms">
                         <div class="news-one__single">
                             <div class="news-one__img-box">
-                                <img src="{{asset('assets/images/blog/news-1.3.jpg')}}" alt="">
+                                <img src="{{asset('portal-src/assets/images/blog/news-1.3.jpg')}}" alt="">
                                 <a href="news-details.html"><span class="icon-plus-symbol"></span></a>
                             </div>
                             <div class="news-one__content-box">
@@ -1247,7 +1247,7 @@
         <!--Site Footer Start-->
         <footer class="site-footer">
             <div class="site-footer-shape-bg"
-                style="background-image: url(assets/images/shapes/site-footer-shape-bg.png);"></div>
+                style="background-image: url(portal-src/assets/images/shapes/site-footer-shape-bg.png);"></div>
             <div class="container">
                 <div class="site-footer__top">
                     <div class="row">
@@ -1328,7 +1328,7 @@
             <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
 
             <div class="logo-box">
-                <a href="index.html" aria-label="logo image"><img src="{{asset('assets/images/resources/logo-2.png')}}" width="125"
+                <a href="index.html" aria-label="logo image"><img src="{{asset('portal-src/assets/images/resources/logo-2.png')}}" width="125"
                         height="43" alt="" /></a>
             </div>
             <!-- /.logo-box -->
@@ -1380,36 +1380,36 @@
     <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="icon-right-arrow"></i></a>
 
 
-<script src="{{ asset('assets/vendors/jquery/jquery-3.6.0.min.js') }}"></script>
-    <script src="{{ asset('assets/vendors/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('assets/vendors/jarallax/jarallax.min.js') }}"></script>
-    <script src="{{ asset('assets/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js') }}"></script>
-    <script src="{{ asset('assets/vendors/jquery-appear/jquery.appear.min.js') }}"></script>
-    <script src="{{ asset('assets/vendors/jquery-circle-progress/jquery.circle-progress.min.js') }}"></script>
-    <script src="{{ asset('assets/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js') }}"></script>
-    <script src="{{ asset('assets/vendors/jquery-validate/jquery.validate.min.js') }}"></script>
-    <script src="{{ asset('assets/vendors/nouislider/nouislider.min.js') }}"></script>
-    <script src="{{ asset('assets/vendors/odometer/odometer.min.js') }}"></script>
-    <script src="{{ asset('assets/vendors/swiper/swiper.min.js') }}"></script>
-    <script src="{{ asset('assets/vendors/tiny-slider/tiny-slider.min.js') }}"></script>
-    <script src="{{ asset('assets/vendors/wnumb/wNumb.min.js') }}"></script>
-    <script src="{{ asset('assets/vendors/wow/wow.js') }}"></script>
-    <script src="{{ asset('assets/vendors/isotope/isotope.js') }}"></script>
-    <script src="{{ asset('assets/vendors/countdown/countdown.min.js') }}"></script>
-    <script src="{{ asset('assets/vendors/owl-carousel/owl.carousel.min.js') }}"></script>
-    <script src="{{ asset('assets/vendors/bxslider/jquery.bxslider.min.js') }}"></script>
-    <script src="{{ asset('assets/vendors/bootstrap-select/js/bootstrap-select.min.js') }}"></script>
-    <script src="{{ asset('assets/vendors/vegas/vegas.min.js') }}"></script>
-    <script src="{{ asset('assets/vendors/jquery-ui/jquery-ui.js') }}"></script>
-    <script src="{{ asset('assets/vendors/timepicker/timePicker.js') }}"></script>
-    <script src="{{ asset('assets/vendors/circleType/jquery.circleType.js') }}"></script>
-    <script src="{{ asset('assets/vendors/circleType/jquery.lettering.min.js') }}"></script>
+<script src="{{ asset('portal-src/assets/vendors/jquery/jquery-3.6.0.min.js') }}"></script>
+    <script src="{{ asset('portal-src/assets/vendors/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('portal-src/assets/vendors/jarallax/jarallax.min.js') }}"></script>
+    <script src="{{ asset('portal-src/assets/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js') }}"></script>
+    <script src="{{ asset('portal-src/assets/vendors/jquery-appear/jquery.appear.min.js') }}"></script>
+    <script src="{{ asset('portal-src/assets/vendors/jquery-circle-progress/jquery.circle-progress.min.js') }}"></script>
+    <script src="{{ asset('portal-src/assets/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ asset('portal-src/assets/vendors/jquery-validate/jquery.validate.min.js') }}"></script>
+    <script src="{{ asset('portal-src/assets/vendors/nouislider/nouislider.min.js') }}"></script>
+    <script src="{{ asset('portal-src/assets/vendors/odometer/odometer.min.js') }}"></script>
+    <script src="{{ asset('portal-src/assets/vendors/swiper/swiper.min.js') }}"></script>
+    <script src="{{ asset('portal-src/assets/vendors/tiny-slider/tiny-slider.min.js') }}"></script>
+    <script src="{{ asset('portal-src/assets/vendors/wnumb/wNumb.min.js') }}"></script>
+    <script src="{{ asset('portal-src/assets/vendors/wow/wow.js') }}"></script>
+    <script src="{{ asset('portal-src/assets/vendors/isotope/isotope.js') }}"></script>
+    <script src="{{ asset('portal-src/assets/vendors/countdown/countdown.min.js') }}"></script>
+    <script src="{{ asset('portal-src/assets/vendors/owl-carousel/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('portal-src/assets/vendors/bxslider/jquery.bxslider.min.js') }}"></script>
+    <script src="{{ asset('portal-src/assets/vendors/bootstrap-select/js/bootstrap-select.min.js') }}"></script>
+    <script src="{{ asset('portal-src/assets/vendors/vegas/vegas.min.js') }}"></script>
+    <script src="{{ asset('portal-src/assets/vendors/jquery-ui/jquery-ui.js') }}"></script>
+    <script src="{{ asset('portal-src/assets/vendors/timepicker/timePicker.js') }}"></script>
+    <script src="{{ asset('portal-src/assets/vendors/circleType/jquery.circleType.js') }}"></script>
+    <script src="{{ asset('portal-src/assets/vendors/circleType/jquery.lettering.min.js') }}"></script>
 
 
 
 
     <!-- template js -->
-    <script src="assets/js/zeinet.js"></script>
+    <script src="portal-src/assets/js/zeinet.js"></script>
 </body>
 
 
