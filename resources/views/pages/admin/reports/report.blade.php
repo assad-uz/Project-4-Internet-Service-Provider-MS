@@ -63,11 +63,11 @@
                     <i class="fas fa-redo me-1"></i> Reset
                 </a>
                 
-                {{-- Export Buttons (Placeholder for future development) --}}
+                <!-- {{-- Export Buttons (Placeholder for future development) --}}
                 <div class="ms-auto d-flex gap-1">
                     <button type="button" class="btn btn-sm btn-outline-success" disabled title="Not implemented yet">Export CSV</button>
                     <button type="button" class="btn btn-sm btn-outline-danger" disabled title="Not implemented yet">Export PDF</button>
-                </div>
+                </div> -->
             </div>
         </form>
     </div>
