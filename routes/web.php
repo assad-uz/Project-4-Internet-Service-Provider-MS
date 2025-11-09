@@ -14,11 +14,11 @@ use App\Http\Controllers\ConnectionController;
 use App\Http\Controllers\CustomerTypeController;
 use App\Http\Controllers\DistributionBoxController;
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('pages.portal.home');
+});
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
+// Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
