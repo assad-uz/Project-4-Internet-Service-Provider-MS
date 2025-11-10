@@ -2,8 +2,8 @@
 
 @include('layouts-portal.partials.navbar')
 
-<main>
+<div class="page-wrapper">
   @yield('content')
-</main>
+</div>
 
 @include('layouts-portal.partials.footer')
