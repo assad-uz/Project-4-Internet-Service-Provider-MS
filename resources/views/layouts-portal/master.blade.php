@@ -23,7 +23,7 @@
 <!-- / Footer -->
 
 
-<!-- Child View files -->
+***<!-- Child View files -->***
 @extends('layouts-portal.base')
 
 @section('title', 'Admin Dashboard')
@@ -32,5 +32,5 @@
 @endpush
 
 @section('content')
-
+ <!-- Your Content goes here -->
 @endsection
