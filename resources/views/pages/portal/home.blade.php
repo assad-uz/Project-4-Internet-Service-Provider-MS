@@ -1071,7 +1071,6 @@
 <!--News One End-->
 
 <!--Newsletter Start-->
-
 <section class="service-available">
             <div class="container">
                 <div class="service-available__inne">
@@ -1101,8 +1100,8 @@
                 </div>
             </div>
         </section>
-        
-<!--Newsletter End-->
+
+<!--/Newsletter End-->
 
 <!-- Footer -->
 @include('layouts-portal.partials.footer')
