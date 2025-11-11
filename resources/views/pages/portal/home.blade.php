@@ -348,7 +348,7 @@
                             </div>
                             <div class="content">
                                 <h4>Satellite Channels</h4>
-                                <p>Strategy experience and expertise to enable.</p>
+                                <p>Enjoy seamless streaming of popular local and global TV channels with your connection.</p>
                             </div>
                         </li>
                         <li>
@@ -357,7 +357,7 @@
                             </div>
                             <div class="content">
                                 <h4>Free Installation</h4>
-                                <p>Strategy experience and expertise to enable.</p>
+                                <p>Professional setup and activation of your service done at zero initial cost.</p>
                             </div>
                         </li>
                     </ul>
@@ -368,7 +368,7 @@
                             </div>
                             <div class="content">
                                 <h4>24/7 Support</h4>
-                                <p>Strategy experience and expertise to enable.</p>
+                                <p>Get reliable technical assistance from our experts, available all day, every day.</p>
                             </div>
                         </li>
                         <li>
@@ -377,7 +377,7 @@
                             </div>
                             <div class="content">
                                 <h4>Best Tariff Plans</h4>
-                                <p>Strategy experience and expertise to enable.</p>
+                                <p>Access affordable, high-value internet packages tailored perfectly to your needs.</p>
                             </div>
                         </li>
                     </ul>
