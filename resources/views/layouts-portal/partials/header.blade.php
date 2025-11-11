@@ -4,11 +4,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title> Home Three || Zeinet || Zeinet HTML 5 Template </title>
+  <title> Home || SwiftNet</title>
   <!-- favicons Icons -->
-  <link rel="apple-touch-icon" sizes="180x180" href="{{asset('portal-src/assets/images/favicons/apple-touch-icon.png')}}" />
-  <link rel="icon" type="image/png" sizes="32x32" href="{{asset('portal-src/assets/images/favicons/favicon-32x32.png')}}" />
-  <link rel="icon" type="image/png" sizes="16x16" href="{{asset('portal-src/assets/images/favicons/favicon-16x16.png')}}" />
+  <link rel="icon" sizes="180x180" href="{{asset('portal-src/assets/images/favicons/favicon.png')}}" />
+  <link rel="icon" type="image/png" sizes="32x32" href="{{asset('portal-src/assets/images/favicons/favicon.png')}}" />
+  <link rel="icon" type="image/png" sizes="16x16" href="{{asset('portal-src/assets/images/favicons/favicon.png')}}" />
   <link rel="manifest" href="{{asset('portal-src/assets/images/favicons/site.webmanifest')}}" />
   <meta name="description" content="Zeinet HTML 5 Template " />
 
