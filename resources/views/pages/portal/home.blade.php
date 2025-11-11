@@ -347,7 +347,7 @@
                                 <i class="fa fa-check"></i>
                             </div>
                             <div class="content">
-                                <h4>Satellite Chanells</h4>
+                                <h4>Satellite Channels</h4>
                                 <p>Strategy experience and expertise to enable.</p>
                             </div>
                         </li>
@@ -402,16 +402,16 @@
                     <div class="price__progress-single">
                         <div class="price__progress-box">
                             <div class="circle-progress"
-                                data-options='{ "value": 0.5,"thickness": 10,"emptyFill": "#f7f5f1","lineCap": "square", "size": 140, "fill": { "color": "#089fac" } }'>
+                                data-options='{ "value": 0.15,"thickness": 10,"emptyFill": "#f7f5f1","lineCap": "square", "size": 140, "fill": { "color": "#089fac" } }'>
                             </div><!-- /.circle-progress -->
                             <div class="price__pack">
-                                <p>50</p>
+                                <p>15</p>
                                 <span>Mbps</span>
                             </div>
                         </div>
                         <div class="price__progress-content">
-                            <p>Internet</p>
-                            <h3>Fiber Internet</h3>
+                            <p>Internet + TV</p>
+                            <h3>Bronze Pack</h3>
                         </div>
                     </div>
                 </div>
@@ -422,7 +422,7 @@
                                 <i class="fa fa-check"></i>
                             </div>
                             <div class="text">
-                                <p>Internet with a 50 Mbps</p>
+                                <p>Internet with a 15 Mbps</p>
                             </div>
                         </li>
                         <li>
@@ -430,7 +430,7 @@
                                 <i class="fa fa-check"></i>
                             </div>
                             <div class="text">
-                                <p>Connect multiple users at once</p>
+                                <p>TV, Movie & Gaming Server</p>
                             </div>
                         </li>
                         <li>
@@ -451,7 +451,7 @@
                         </li>
                     </ul>
                     <div class="price__box">
-                        <h2 class="price__box-price"> <sup class="price__box-price-dolar">$</sup> 29
+                        <h2 class="price__box-price"> <sup class="price__box-price-dolar">Tk &nbsp;</sup> 599
                             <sup class="price__box-price-last-text">.99</sup>
                         </h2>
                         <div class="price__btn-box">
@@ -467,16 +467,16 @@
                     <div class="price__progress-single">
                         <div class="price__progress-box">
                             <div class="circle-progress"
-                                data-options='{ "value": 0.7,"thickness": 10,"emptyFill": "#f7f5f1","lineCap": "square", "size": 140, "fill": { "color": "#089fac" } }'>
+                                data-options='{ "value": 0.20,"thickness": 10,"emptyFill": "#f7f5f1","lineCap": "square", "size": 140, "fill": { "color": "#089fac" } }'>
                             </div><!-- /.circle-progress -->
                             <div class="price__pack">
-                                <p>100</p>
+                                <p>20</p>
                                 <span>Mbps</span>
                             </div>
                         </div>
                         <div class="price__progress-content">
                             <p>Internet + TV</p>
-                            <h3>Comfort Zone</h3>
+                            <h3>Silver Pack</h3>
                         </div>
                     </div>
                 </div>
@@ -487,7 +487,7 @@
                                 <i class="fa fa-check"></i>
                             </div>
                             <div class="text">
-                                <p>Internet with a 100 Mbps</p>
+                                <p>Internet with a 20 Mbps</p>
                             </div>
                         </li>
                         <li>
@@ -495,7 +495,7 @@
                                 <i class="fa fa-check"></i>
                             </div>
                             <div class="text">
-                                <p>Connect multiple users at once</p>
+                                <p>TV, Movie & Gaming Server</p>
                             </div>
                         </li>
                         <li>
@@ -516,7 +516,7 @@
                         </li>
                     </ul>
                     <div class="price__box">
-                        <h2 class="price__box-price"> <sup class="price__box-price-dolar">$</sup> 39
+                        <h2 class="price__box-price"> <sup class="price__box-price-dolar">Tk &nbsp;</sup> 799
                             <sup class="price__box-price-last-text">.99</sup>
                         </h2>
                         <div class="price__btn-box">
@@ -532,16 +532,16 @@
                     <div class="price__progress-single">
                         <div class="price__progress-box">
                             <div class="circle-progress"
-                                data-options='{ "value": 1,"thickness": 10,"emptyFill": "#f7f5f1","lineCap": "square", "size": 140, "fill": { "color": "#fe9043" } }'>
+                                data-options='{ "value": 0.30,"thickness": 10,"emptyFill": "#f7f5f1","lineCap": "square", "size": 140, "fill": { "color": "#089fac" } }'>
                             </div><!-- /.circle-progress -->
                             <div class="price__pack">
-                                <p>1</p>
-                                <span>Gbps</span>
+                                <p>30</p>
+                                <span>Mbps</span>
                             </div>
                         </div>
                         <div class="price__progress-content">
-                            <p>Internet + TV + Phone</p>
-                            <h3>Full Package</h3>
+                            <p>Internet + TV</p>
+                            <h3>Gold Pack</h3>
                         </div>
                     </div>
                 </div>
@@ -560,7 +560,7 @@
                                 <i class="fa fa-check"></i>
                             </div>
                             <div class="text">
-                                <p>Connect multiple users at once</p>
+                                <p>TV, Movie & Gaming Server</p>
                             </div>
                         </li>
                         <li>
@@ -581,7 +581,72 @@
                         </li>
                     </ul>
                     <div class="price__box">
-                        <h2 class="price__box-price"> <sup class="price__box-price-dolar">$</sup> 49
+                        <h2 class="price__box-price"> <sup class="price__box-price-dolar">Tk &nbsp;</sup> 999
+                            <sup class="price__box-price-last-text">.99</sup>
+                        </h2>
+                        <div class="price__btn-box">
+                            <a href="contact.html" class="thm-btn price__btn">Get started</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Price Single End-->
+            <!--Price Single Start-->
+            <div class="price__single wow fadeInUp" data-wow-delay="400ms">
+                <div class="price__main-progress-box">
+                    <div class="price__progress-single">
+                        <div class="price__progress-box">
+                            <div class="circle-progress"
+                                data-options='{ "value": 0.60,"thickness": 10,"emptyFill": "#f7f5f1","lineCap": "square", "size": 140, "fill": { "color": "#089fac" } }'>
+                            </div><!-- /.circle-progress -->
+                            <div class="price__pack">
+                                <p>60</p>
+                                <span>Mbps</span>
+                            </div>
+                        </div>
+                        <div class="price__progress-content">
+                            <p>Internet + TV</p>
+                            <h3>Platinum Pack</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="price__right-content-box">
+                    <ul class="list-unstyled price__right-points">
+                        <li>
+                            <div class="icon">
+                                <i class="fa fa-check"></i>
+                            </div>
+                            <div class="text">
+                                <p>Internet with a 60 Mbps</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <i class="fa fa-check"></i>
+                            </div>
+                            <div class="text">
+                                <p>Connect multiple users at once</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <i class="fa fa-check"></i>
+                            </div>
+                            <div class="text">
+                                <p>WiFi router free & prevention</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <i class="fa fa-check"></i>
+                            </div>
+                            <div class="text">
+                                <p>Unlimited devices users</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="price__box">
+                        <h2 class="price__box-price"> <sup class="price__box-price-dolar">Tk &nbsp;</sup> 1499
                             <sup class="price__box-price-last-text">.99</sup>
                         </h2>
                         <div class="price__btn-box">
