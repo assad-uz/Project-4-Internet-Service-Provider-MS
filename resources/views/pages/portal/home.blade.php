@@ -1136,39 +1136,29 @@
 <!--News One End-->
 
 <!--Newsletter Start-->
-<section class="service-available">
+<section class="newsletter">
             <div class="container">
-                <div class="service-available__inne">
-                    <div class="service-available__shape-1 float-bob-y">
-                        <img src="{{ asset('portal-src/assets/images/shapes/service-available-shape-1.png') }}" alt="">
+                <div class="newsletter__inner">
+                    <div class="newsletter__left">
+                        <div class="newsletter__icon">
+                            <span class="icon-newsletter"></span>
+                        </div>
+                        <div class="newsletter__content">
+                            <h3>Subscribe now to get <br> latest updates</h3>
+                        </div>
                     </div>
-                    <div class="service-available__shape-2 float-bob-x">
-                        <img src="{{ asset('portal-src/assets/images/shapes/service-available-shape-2.png') }}" alt="">
-                    </div>
-                    <div class="service-available__shape-3 float-bob-y">
-                        <img src="{{ asset('portal-src/assets/images/shapes/service-available-shape-3.png') }}" alt="">
-                    </div>
-                    <div class="service-available__shape-4 float-bob-x">
-                        <img src="{{ asset('portal-src/assets/images/shapes/service-available-shape-4.png') }}" alt="">
-                    </div>
-                    <div class="service-available__left">
-                        <h3 class="service-available__title">Subscribe now to get <br> latest updates</h3>
-                    </div>
-
-                    <!-- Email Subscribe Form -->
-                    <div class="service-available__right">
-                        <form method="POST" action="{{ route('newsletter.subscribe') }}" class="service-available__form">
+                    <div class="newsletter__right">
+                        <form method="POST" action="{{ route('newsletter.subscribe') }}" class="newsletter__form">
                         @csrf    
-                        <div class="service-available__input-box">
-                                <input type="email" placeholder="Enter your email address" name="email required">
-                                <button type="submit" class="service-available__btn thm-btn">Subscribe</button>
+                        <div class="newsletter__input-box">
+                                <input type="email" placeholder="Email address" name="email">
+                                <button type="submit" class="newsletter__btn thm-btn">Subscribe</button>
                             </div>
                         </form>
                     </div>
                 </div>
             </div>
         </section>
-
 <!--/Newsletter End-->
 
 <!-- Footer -->
