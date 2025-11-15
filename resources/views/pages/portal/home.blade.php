@@ -467,7 +467,7 @@
                     <div class="price__progress-single">
                         <div class="price__progress-box">
                             <div class="circle-progress"
-                                data-options='{ "value": 0.20,"thickness": 10,"emptyFill": "#f1bf5bff","lineCap": "square", "size": 140, "fill": { "color": "#089fac" } }'>
+                                data-options='{ "value": 0.20,"thickness": 10,"emptyFill": "#f7f5f1","lineCap": "square", "size": 140, "fill": { "color": "#4947b8ff" } }'>
                             </div><!-- /.circle-progress -->
                             <div class="price__pack">
                                 <p>20</p>
@@ -532,7 +532,7 @@
                     <div class="price__progress-single">
                         <div class="price__progress-box">
                             <div class="circle-progress"
-                                data-options='{ "value": 0.30,"thickness": 10,"emptyFill": "#4577d4ff","lineCap": "square", "size": 140, "fill": { "color": "#089fac" } }'>
+                                data-options='{ "value": 0.30,"thickness": 10,"emptyFill": "#f7f5f1","lineCap": "square", "size": 140, "fill": { "color": "#a16851ff" } }'>
                             </div><!-- /.circle-progress -->
                             <div class="price__pack">
                                 <p>30</p>
@@ -597,7 +597,7 @@
                     <div class="price__progress-single">
                         <div class="price__progress-box">
                             <div class="circle-progress"
-                                data-options='{ "value": 0.60,"thickness": 10,"emptyFill": "#b44750ff","lineCap": "square", "size": 140, "fill": { "color": "#089fac" } }'>
+                                data-options='{ "value": 0.60,"thickness": 10,"emptyFill": "#f7f5f1","lineCap": "square", "size": 140, "fill": { "color": "#c0545aff" } }'>
                             </div><!-- /.circle-progress -->
                             <div class="price__pack">
                                 <p>60</p>
