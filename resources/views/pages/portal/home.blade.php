@@ -517,7 +517,7 @@
                     </ul>
                     <div class="price__box">
                         <h2 class="price__box-price"> <sup class="price__box-price-dolar">Tk &nbsp;</sup> 799
-                            <sup class="price__box-price-last-text">.99</sup>
+                            <!-- <sup class="price__box-price-last-text">.99</sup> -->
                         </h2>
                         <div class="price__btn-box">
                             <a href="contact.html" class="thm-btn price__btn">Get started</a>
@@ -582,7 +582,7 @@
                     </ul>
                     <div class="price__box">
                         <h2 class="price__box-price"> <sup class="price__box-price-dolar">Tk &nbsp;</sup> 999
-                            <sup class="price__box-price-last-text">.99</sup>
+                            <!-- <sup class="price__box-price-last-text">.99</sup> -->
                         </h2>
                         <div class="price__btn-box">
                             <a href="contact.html" class="thm-btn price__btn">Get started</a>
@@ -647,7 +647,7 @@
                     </ul>
                     <div class="price__box">
                         <h2 class="price__box-price"> <sup class="price__box-price-dolar">Tk &nbsp;</sup> 1499
-                            <sup class="price__box-price-last-text">.99</sup>
+                            <!-- <sup class="price__box-price-last-text">.99</sup> -->
                         </h2>
                         <div class="price__btn-box">
                             <a href="contact.html" class="thm-btn price__btn">Get started</a>
