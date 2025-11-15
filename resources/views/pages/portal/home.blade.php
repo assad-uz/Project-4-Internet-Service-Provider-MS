@@ -452,7 +452,7 @@
                     </ul>
                     <div class="price__box">
                         <h2 class="price__box-price"> <sup class="price__box-price-dolar">Tk &nbsp;</sup> 599
-                            <sup class="price__box-price-last-text">.99</sup>
+                            <!-- <sup class="price__box-price-last-text">.99</sup> -->
                         </h2>
                         <div class="price__btn-box">
                             <a href="contact.html" class="thm-btn price__btn">Get started</a>
@@ -633,7 +633,7 @@
                                 <i class="fa fa-check"></i>
                             </div>
                             <div class="text">
-                                <p>WiFi router free</p>
+                                <p>WiFi router free & prevention</p>
                             </div>
                         </li>
                         <li>
