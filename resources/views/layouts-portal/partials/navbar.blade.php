@@ -76,7 +76,7 @@
                       <div class="main-menu-three__search-box">
                         <a href="#"
                           class="main-menu-three__search search-toggler icon-magnifying-glass"></a>
-                        <a href="cart.html" class="main-menu-three__search  icon-shopping-cart"></a>
+                        <!-- <a href="cart.html" class="main-menu-three__search  icon-shopping-cart"></a> -->
                       </div>
                       <div class="main-menu-three__help-line">
                         <div class="main-menu-three__help-line-icon">
@@ -85,8 +85,7 @@
                         <div class="main-menu-three__help-line-content">
                           <p class="main-menu-three__help-line-sub-title">Help line</p>
                           <h5 class="main-menu-three__help-line-number"><a
-                              href="tel:8898006802">+88
-                              (9800) 6802</a></h5>
+                              href="tel:01234-567890">+880 1234 567890</a></h5>
                         </div>
                       </div>
                       <div class="main-menu-three__btn-box">
