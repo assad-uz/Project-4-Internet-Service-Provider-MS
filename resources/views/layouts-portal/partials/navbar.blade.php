@@ -9,7 +9,7 @@
                     <i class="fas fa-clock"></i>
                   </div>
                   <div class="text">
-                    <p>Mon - Sat: 8:00am - 6:00pm</p>
+                    <p>Sat - Thu: 8:00am - 6:00pm</p>
                   </div>
                 </li>
                 <li>
@@ -17,7 +17,7 @@
                     <i class="fas fa-envelope"></i>
                   </div>
                   <div class="text">
-                    <p><a href="mailto:needhelp@company.com">needhelp@company.com</a></p>
+                    <p><a href="mailto:needhelp@company.com">support@swiftnet.com</a></p>
                   </div>
                 </li>
               </ul>

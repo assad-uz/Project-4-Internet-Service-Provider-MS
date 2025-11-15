@@ -1154,10 +1154,13 @@
                     <div class="service-available__left">
                         <h3 class="service-available__title">Subscribe now to get <br> latest updates</h3>
                     </div>
+
+                    <!-- Email Subscribe Form -->
                     <div class="service-available__right">
-                        <form class="service-available__form">
-                            <div class="service-available__input-box">
-                                <input type="text" placeholder="Enter address" name="address">
+                        <form method="POST" action="{{ route('newsletter.subscribe') }}" class="service-available__form">
+                        @csrf    
+                        <div class="service-available__input-box">
+                                <input type="email" placeholder="Enter your email address" name="email required">
                                 <button type="submit" class="service-available__btn thm-btn">Subscribe</button>
                             </div>
                         </form>

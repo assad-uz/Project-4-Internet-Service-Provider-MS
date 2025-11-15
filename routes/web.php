@@ -11,6 +11,7 @@ use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ConnectionController;
+use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\CustomerTypeController;
 use App\Http\Controllers\DistributionBoxController;
 
@@ -18,7 +19,9 @@ Route::get('/', function () {
     return view('pages.portal.home');
 });
 
-// Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::post('/subscribe', [NewsletterController::class, 'subscribe'])->name('newsletter.subscribe');
+
+// Admin Route
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
