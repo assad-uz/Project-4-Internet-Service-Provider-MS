@@ -597,7 +597,7 @@
                     <div class="price__progress-single">
                         <div class="price__progress-box">
                             <div class="circle-progress"
-                                data-options='{ "value": 0.60,"thickness": 10,"emptyFill": "#f7f5f1","lineCap": "square", "size": 140, "fill": { "color": "#c0545aff" } }'>
+                                data-options='{ "value": 0.60,"thickness": 10,"emptyFill": "#f7f5f1","lineCap": "square", "size": 140, "fill": { "color": "#353b48" } }'>
                             </div><!-- /.circle-progress -->
                             <div class="price__pack">
                                 <p>60</p>
