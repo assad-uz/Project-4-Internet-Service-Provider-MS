@@ -625,7 +625,7 @@
                                 <i class="fa fa-check"></i>
                             </div>
                             <div class="text">
-                                <p>Connect multiple users at once</p>
+                                <p>Connect multiple users</p>
                             </div>
                         </li>
                         <li>
@@ -633,7 +633,7 @@
                                 <i class="fa fa-check"></i>
                             </div>
                             <div class="text">
-                                <p>WiFi router free & prevention</p>
+                                <p>WiFi router free</p>
                             </div>
                         </li>
                         <li>
