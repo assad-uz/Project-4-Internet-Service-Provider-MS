@@ -55,6 +55,6 @@ class NewsletterController extends Controller
         $subscriptions = NewsletterSubscription::orderBy('created_at', 'desc')->get();
 
         // Pass data to the admin view
-        return view('admin.newsletter.index', compact('subscriptions'));
+        return view('pages.admin.newsletters.index', compact('subscriptions'));
     }
 }

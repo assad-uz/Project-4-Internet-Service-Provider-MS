@@ -106,7 +106,7 @@
     </li>
 
     <li class="menu-item {{ request()->is('admin*') ? 'active' : '' }}">
-      <a href="{{ route('admin.newsletter.index') }}" class="menu-link">
+      <a href="{{ route('admin.newsletters.index') }}" class="menu-link">
         <i class="menu-icon tf-icons bx bx-notification"></i>
         <div class="text-truncate" data-i18n="Layouts">Newsletter Subscribers</div>
       </a>
