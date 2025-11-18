@@ -106,9 +106,9 @@
     </li>
 
     <li class="menu-item {{ request()->is('') ? 'active' : '' }}">
-      <a href="javascript:void(0);" class="menu-link">
+      <a href="{{ route('admin.newsletter.index') }}">
         <i class="menu-icon tf-icons bx bx-notification"></i>
-        <div class="text-truncate" data-i18n="Layouts">Newsletter Subscriptions</div>
+        <div class="text-truncate" data-i18n="Layouts">Newsletter Subscribers</div>
       </a>
     </li>
 
