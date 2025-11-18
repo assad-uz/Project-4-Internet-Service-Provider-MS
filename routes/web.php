@@ -19,7 +19,7 @@ Route::get('/', function () {
     return view('pages.portal.home');
 });
 
-Route::post('/subscribe', [NewsletterController::class, 'subscribe'])->name('newsletter.index');
+Route::post('/subscribe', [NewsletterController::class, 'subscribe'])->name('admin.newsletter.index');
 
 // Admin Route
 
