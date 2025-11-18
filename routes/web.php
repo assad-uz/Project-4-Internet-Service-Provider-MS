@@ -19,7 +19,10 @@ Route::get('/', function () {
     return view('pages.portal.home');
 });
 
+// Newsletter Subscription (POST method for form submission)
 Route::post('/subscribe', [NewsletterController::class, 'subscribe'])->name('newsletter.subscribe');
+// Newsletter Subscription (GET method for See the List)
+Route::get('/admin/newsletter', [NewsletterController::class, 'index'])->name('admin.newsletter.index');
 
 // Admin Route
 
