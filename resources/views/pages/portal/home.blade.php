@@ -132,7 +132,7 @@
                     <span class="icon-router"></span>
                 </div>
                 <div class="wifi-pack__content">
-                    <h3 class="wifi-pack__price"><sup>$</sup> 29.99 <span>/Month</span></h3>
+                    <h3 class="wifi-pack__price"><sup>Tk &nbsp;</sup> 1,499 <span>/Month</span></h3>
                     <p class="wifi-pace__text">Free WiFi router included in the packages</p>
                 </div>
             </div>
@@ -646,7 +646,7 @@
                         </li>
                     </ul>
                     <div class="price__box">
-                        <h2 class="price__box-price"> <sup class="price__box-price-dolar">Tk &nbsp;</sup> 1499
+                        <h2 class="price__box-price"> <sup class="price__box-price-dolar">Tk &nbsp;</sup> 1,499
                             <!-- <sup class="price__box-price-last-text">.99</sup> -->
                         </h2>
                         <div class="price__btn-box">
