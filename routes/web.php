@@ -23,7 +23,7 @@ Route::get('/', function () {
 Route::post('/subscribe', [NewsletterController::class, 'subscribe'])->name('newsletter.subscribe');
 // Newsletter Subscription (GET method for See the List)
 Route::get('/newsletter', [NewsletterController::class, 'index'])->name('admin.newsletters.index');
-Newsletter Subscriber Delete (DELETE method)
+// Newsletter Subscriber Delete (DELETE method)
 Route::delete('/newsletter/{subscription}', [NewsletterController::class, 'destroy'])->name('admin.newsletter.destroy');
 
 // Admin Route

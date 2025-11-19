@@ -38,20 +38,19 @@
                             </td>
                             <td>
                                 @if($subscription->is_confirmed)
-                                    <span class="badge bg-success">Confirmed</span>
+                                <span class="badge bg-success">Confirmed</span>
                                 @else
-                                    <span class="badge bg-warning text-dark">Unconfirmed</span>
+                                <span class="badge bg-warning text-dark">Unconfirmed</span>
                                 @endif
                             </td>
                             <td>{{ $subscription->created_at->format('M d, Y h:i A') }}</td>
                             <td>
-                                {{-- Delete Button (Placeholder) --}}
                                 {{-- Delete Button --}}
-    <form action="{{ route('admin.newsletter.destroy', $subscription) }}" method="POST" class="d-inline" onsubmit="return confirm('Are you sure you want to delete this subscriber?')">
-        @csrf 
-        @method('DELETE')
-        <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
-    </form>
+                                <form action="{{ route('admin.newsletter.destroy', $subscription) }}" method="POST" class="d-inline" onsubmit="return confirm('Are you sure you want to delete this subscriber?')">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
+                                </form>
                             </td>
                         </tr>
                         @empty
