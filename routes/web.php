@@ -17,14 +17,15 @@ use App\Http\Controllers\DistributionBoxController;
 
 Route::get('/', function () {
     return view('pages.portal.home');
-});
+})->name('home');
 
-// Newsletter Subscription (POST method for form submission)
+// Newsletter Subscription 
+// (POST method for form submission)
 Route::post('/subscribe', [NewsletterController::class, 'subscribe'])->name('newsletter.subscribe');
-// Newsletter Subscription (GET method for See the List)
+// (GET method for See the List)
 Route::get('/newsletter', [NewsletterController::class, 'index'])->name('admin.newsletters.index');
-// Newsletter Subscriber Delete (DELETE method)
-Route::delete('/newsletter/{subscription}', [NewsletterController::class, 'destroy'])->name('admin.newsletter.destroy');
+// (DELETE method)
+Route::delete('/newsletter/{subscription}', [NewsletterController::class, 'destroy'])->name('admin.newsletters.destroy');
 
 // Admin Route
 
@@ -60,5 +61,3 @@ Route::resource('payments', PaymentController::class);
 
 // Reports
 Route::get('/reports', [ReportController::class, 'index'])->name('pages.admin.reports.index');
-
-

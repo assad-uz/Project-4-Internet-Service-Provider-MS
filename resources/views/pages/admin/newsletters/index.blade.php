@@ -12,7 +12,7 @@
             <h3 class="mb-0">Newsletter Subscriptions</h3>
             <small class="text-muted">Total Subscribers: {{ $subscriptions->count() }}</small>
         </div>
-        <a href="#" class="btn btn-outline-success" title="Export all emails to CSV">Export CSV</a>
+        <!-- <a href="#" class="btn btn-outline-success" title="Export all emails to CSV">Export CSV</a> -->
     </div>
 
     {{-- Subscription Table --}}
@@ -46,7 +46,7 @@
                             <td>{{ $subscription->created_at->format('M d, Y h:i A') }}</td>
                             <td>
                                 {{-- Delete Button --}}
-                                <form action="{{ route('admin.newsletter.destroy', $subscription) }}" method="POST" class="d-inline" onsubmit="return confirm('Are you sure you want to delete this subscriber?')">
+                                <form action="{{ route('admin.newsletters.destroy', $subscription) }}" method="POST" class="d-inline" onsubmit="return confirm('Are you sure you want to delete this subscriber?')">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>

@@ -64,6 +64,6 @@ class NewsletterController extends Controller
         $subscription->delete();
 
         // Redirect back to the list with a success message
-        return redirect()->route('admin.newsletter.index')->with('success', 'Subscriber deleted successfully.');
+        return redirect()->route('admin.newsletters.index')->with('success', 'Subscriber deleted successfully.');
     }
 }
