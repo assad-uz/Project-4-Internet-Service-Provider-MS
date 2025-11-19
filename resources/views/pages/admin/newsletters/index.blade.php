@@ -46,11 +46,12 @@
                             <td>{{ $subscription->created_at->format('M d, Y h:i A') }}</td>
                             <td>
                                 {{-- Delete Button (Placeholder) --}}
-                                <form action="#" method="POST" class="d-inline" onsubmit="return confirm('Are you sure you want to delete this subscriber?')">
-                                    {{-- @csrf 
-                                    @method('DELETE') --}}
-                                    <button type="submit" class="btn btn-sm btn-outline-danger" disabled>Delete</button>
-                                </form>
+                                {{-- Delete Button --}}
+    <form action="{{ route('admin.newsletter.destroy', $subscription) }}" method="POST" class="d-inline" onsubmit="return confirm('Are you sure you want to delete this subscriber?')">
+        @csrf 
+        @method('DELETE')
+        <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
+    </form>
                             </td>
                         </tr>
                         @empty

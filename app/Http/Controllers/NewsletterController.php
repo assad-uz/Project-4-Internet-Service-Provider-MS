@@ -57,4 +57,13 @@ class NewsletterController extends Controller
         // Pass data to the admin view
         return view('pages.admin.newsletters.index', compact('subscriptions'));
     }
+
+    public function destroy(NewsletterSubscription $subscription)
+    {
+        // Delete the subscription record
+        $subscription->delete();
+
+        // Redirect back to the list with a success message
+        return redirect()->route('admin.newsletter.index')->with('success', 'Subscriber deleted successfully.');
+    }
 }
