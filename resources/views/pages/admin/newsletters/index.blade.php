@@ -53,7 +53,7 @@
                             </td>
                             <td>{{ $subscription->created_at->format('M d, Y h:i A') }}</td>
                             <td>
-                                <form action="{{ route('admin.newsletter.destroy', $subscription) }}" method="POST" 
+                                <form action="{{ route('admin.newsletters.destroy', $subscription) }}" method="POST" 
                                     class="d-inline" 
                                     onsubmit="return confirm('Are you sure you want to delete the subscriber: {{ $subscription->email }}?');">
                                     @csrf 
